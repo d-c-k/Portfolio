@@ -1,9 +1,10 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener("DOMContentLoaded", function(){
 
-    let x = 'Hamster Paj'
-    let run = new TextRunner(x)
+    let x = "Hamster Paj"
+    let node = "test3"
+    let run = new TextRunner(x,node)
 
-    document.getElementById('test3').appendChild(run.text);
+    run.runner();
     console.log(run)
 
 })
