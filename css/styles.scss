@@ -1,0 +1,60 @@
+$background: #1E1E1E;
+$text_forground: #D4D4D4;
+$text_main: #FFFFFF;
+$text_class: #4EC9B0;
+$text_comment: #608B4E;
+$text_string: #CE9178;
+$text_variable: #9CDCFE;
+$text_keyword: #569CD6;
+$text_javadocKeyword: #D9E577;
+
+*{
+    font-family: Consola, monospace;
+}
+body{
+    margin: 0;
+    background-color: $background;
+}
+.main_wrapper{
+    margin-top: 1em;
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+
+    .content{
+        grid-column: 2/6;        
+        
+        header{
+            color: $text_comment;
+
+            #test3 {
+                white-space: pre-line;
+                color: $text_main;
+              }
+        }
+
+        .test{
+            color: $text_forground;
+            text-align: center;
+            color:red;
+        }
+
+        .test2{
+            width: 100%;
+            height: 50px;
+            background-color: $text_comment;
+        }
+    }
+}
+p{
+    color: $text_main;
+    font-family: Consolas, monospace;
+    font-size: 1em;    
+}
+
+@media screen and(min-width: 641px){
+
+}
+
+@media screen and(min-width: 1008px){
+    
+}
