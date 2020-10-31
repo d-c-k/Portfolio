@@ -1,8 +1,9 @@
 class TextRunner{
-    constructor(string = "", node = ""){
+    constructor(string = "", node = "", timer = 100){
         this.string = string;
         this.length = this.string.length;
         this.node = node;
+        this.timer = timer;
         this.i = 0;
     }
 
@@ -10,7 +11,7 @@ class TextRunner{
         if (this.i < this.length){
             document.getElementById(this.node).innerHTML += this.string.charAt(this.i);
             this.i++;
-            setTimeout(this.runner.bind(this), 100);
+            setTimeout(this.runner.bind(this), this.timer);
         }  
     }
 }

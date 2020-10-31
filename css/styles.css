@@ -25,7 +25,7 @@ body {
   color: #608B4E;
 }
 
-.main_wrapper .content header #test3 {
+.main_wrapper .content header .runner {
   white-space: pre-line;
   color: #FFFFFF;
 }
