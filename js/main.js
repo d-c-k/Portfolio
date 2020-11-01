@@ -1,9 +1,14 @@
 document.addEventListener("DOMContentLoaded", function(){
     
+    //---language test---//
     let lang = ["SV", "EN"];
     let i = 0;
     let selectedLang = "";
+    //------------------//
+
     let interface = new Interface();
+    interface.createHeader();
+
     document.getElementById("lang_select").addEventListener("click", function(){      
         
         i = 1 - i;
@@ -11,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function(){
         console.log(i);
         console.log(lang[i]);
         console.log(selectedLang);
-        interface.createHeader(selectedLang);
+        
         document.getElementById("lang_select").innerHTML = lang[i];
     })
     

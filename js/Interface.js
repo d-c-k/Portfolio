@@ -4,8 +4,12 @@ class Interface{
     }
 
     createHeader(lang = "SV"){
-        document.getElementById("rubrik").innerHTML = "";
-        
+        //document.getElementById("rubrik").innerHTML = "";
+        let rubrik = new TextRunner("Portfolio Daniel Koefoed", "rubrik");
+        rubrik.runner();
+    }
+
+    createMenu(){
         let swe = "test Svenska";
         let eng = "test Engelska";
         let text = "";
@@ -14,9 +18,5 @@ class Interface{
         }else if (lang == "EN"){
             text = eng;
         }
-            
-        // let rubrik = new TextRunner("Portfolio Daniel Koefoed", "rubrik");
-        let rubrik = new TextRunner(text, "rubrik");
-        rubrik.runner();
     }
 }

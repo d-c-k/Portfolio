@@ -16,20 +16,51 @@ body{
     background-color: $background;
 }
 .main_wrapper{
-    margin-top: 1em;
+    //margin-top: 1em;
     display: grid;
-    grid-template-columns: 1fr 2fr 2fr 2fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr 1fr;
+    grid-template-rows: 2em 1.5em 1fr;
 
     .content{
-        grid-column: 2/6;        
+        grid-column: 2/7; 
+        grid-row: 2;       
         
         header{
             color: $text_comment;
+            display: grid;
+            grid-template-columns: 2fr 2fr 2fr 1fr 1fr;
 
             .runner {
+                grid-column: 1/4;
                 white-space: pre-line;
                 color: $text_main;
-              }
+            }
+
+            .settings{
+                grid-column: 5;
+
+                img{
+                    max-height: 1.4em;
+                    color: $text_main;
+                }
+                
+                .dropdown{
+                    display: none;
+                    position: absolute;
+                    border: 1px solid $text_main;
+                    padding: 10px;        
+                    right: 10%;            
+                    z-index: 1;
+
+                    .set_btn{
+                        
+                    }
+                }                
+            }
+
+            .settings:hover .dropdown{
+                display: block;
+            }
         }
 
         .test{
