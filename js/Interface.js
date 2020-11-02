@@ -5,7 +5,7 @@ class Interface{
 
     createHeader(lang = "SV"){
         //document.getElementById("rubrik").innerHTML = "";
-        let rubrik = new TextRunner("Portfolio Daniel Koefoed", "rubrik");
+        let rubrik = new TextRunner("Portfolio - Daniel Koefoed", "rubrik");
         rubrik.runner();
     }
 

@@ -1,12 +1,6 @@
-$background: #1E1E1E;
-$text_forground: #D4D4D4;
-$text_main: #FFFFFF;
-$text_class: #4EC9B0;
-$text_comment: #608B4E;
-$text_string: #CE9178;
-$text_variable: #9CDCFE;
-$text_keyword: #569CD6;
-$text_javadocKeyword: #D9E577;
+$background: #FFFFFF;
+$text_main: #1E1E1E;
+
 
 @mixin set_button{
     height: 2em;
