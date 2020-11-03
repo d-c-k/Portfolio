@@ -29,5 +29,13 @@ let translations = [
     {
         sv: "Jag heter Daniel.",
         en: "My name is Daniel."
-    }
+    },
+    {
+        sv: "[Utvalda arbeten]",
+        en: "[Selected works]"
+    },
+    {
+        sv: "[Kontakt]",
+        en: "[Contact]"
+    },
 ]

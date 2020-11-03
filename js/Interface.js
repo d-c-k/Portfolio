@@ -13,15 +13,14 @@ class Interface{
         let menuDiv = document.createElement("div");
         menuDiv.id = "menu_div";
 
+        //----------"About"----------//
+
         let about = document.createElement("button");
         about.type = "button";
         about.className = "menu_btn";
         about.innerHTML = "<span class='lang_opt'>[Om mig]</span>";
 
         let aboutContent = document.createElement("p");
-        // aboutContent.id = "test";
-        // let test = new TextRunner("<span class='lang_opt'>Jag heter Daniel.</span>", "test");
-        // test.runner();
         aboutContent.className = "menu_content";
         aboutContent.innerHTML = "<span class='lang_opt'>Jag heter Daniel.</span>";
 
@@ -33,9 +32,29 @@ class Interface{
                 aboutContent.style.display = "none";
             }
         })
+
+        //----------"Selected works"----------//
+
+        let works = document.createElement("button");
+        works.type = "button";
+        works.className = "menu_btn";
+        works.innerHTML = "<span class='lang_opt'>[Utvalda arbeten]</span>";
+
+        //----------"Contact"----------//
+
+        let contact = document.createElement("button");
+        contact.type = "button";
+        contact.className = "menu_btn";
+        contact.innerHTML = "<span class='lang_opt'>[Kontakt]</span>";
+
+        //----------------------------//
         
         menuDiv.appendChild(about);
         menuDiv.appendChild(aboutContent);
+
+        menuDiv.appendChild(works);
+
+        menuDiv.appendChild(contact);
 
         innerContent.prepend(menuDiv);
     }
