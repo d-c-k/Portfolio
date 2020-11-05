@@ -18,11 +18,11 @@ class Interface{
         let about = document.createElement("button");
         about.type = "button";
         about.className = "menu_btn";
-        about.innerHTML = "<span class='lang_opt'>[Om mig]</span>";
+        about.innerHTML = "<span class='lang_opt' id='desk_about'>[Om mig]</span>";
 
         let aboutContent = document.createElement("p");
         aboutContent.className = "menu_content";
-        aboutContent.innerHTML = "<span class='lang_opt'>Jag heter Daniel.</span>";
+        aboutContent.innerHTML = "<span class='lang_opt' id='tmp_about'>Jag heter Daniel.</span>";
 
         about.addEventListener("click", function(){
             if (aboutContent.style.display === "none"){
@@ -38,14 +38,14 @@ class Interface{
         let works = document.createElement("button");
         works.type = "button";
         works.className = "menu_btn";
-        works.innerHTML = "<span class='lang_opt'>[Utvalda arbeten]</span>";
+        works.innerHTML = "<span class='lang_opt' id='desk_works'>[Utvalda arbeten]</span>";
 
         //----------"Contact"----------//
 
         let contact = document.createElement("button");
         contact.type = "button";
         contact.className = "menu_btn";
-        contact.innerHTML = "<span class='lang_opt'>[Kontakt]</span>";
+        contact.innerHTML = "<span class='lang_opt' id='desk_contact'>[Kontakt]</span>";
 
         //----------------------------//
         
@@ -57,5 +57,11 @@ class Interface{
         menuDiv.appendChild(contact);
 
         innerContent.prepend(menuDiv);
+    }
+
+    mobMenuHeader(text){
+        
+        let underTitle = new TextRunner(text, "under_title");
+        underTitle.runner();
     }
 }

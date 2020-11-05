@@ -1,5 +1,5 @@
 class TextRunner{
-    constructor(string = "", node = "", timer = 100){
+    constructor(string = "", node = "", timer = 50){
         this.string = string;
         this.length = this.string.length;
         this.node = node;

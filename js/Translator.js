@@ -38,4 +38,20 @@ let translations = [
         sv: "[Kontakt]",
         en: "[Contact]"
     },
+    {
+        sv: "Om mig",
+        en: "About",
+    },
+    {
+        sv: "Utvalda arbeten",
+        en: "Selected works"
+    },
+    {
+        sv: "Kontakt",
+        en: "Contact"
+    },
+    {
+        sv: "tmp SVENSKA",
+        en: "tmp ENGELSKA"
+    }
 ]
