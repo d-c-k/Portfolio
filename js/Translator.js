@@ -53,5 +53,13 @@ let translations = [
     {
         sv: "tmp SVENSKA",
         en: "tmp ENGELSKA"
+    },
+    {
+        sv: "tmp SVENSKA",
+        en: "tmp ENGELSKA"
+    },
+    {
+        sv: "Gå till",
+        en: "Go to"
     }
 ]

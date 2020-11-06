@@ -8,7 +8,7 @@
     <script src="js/TextRunner.js"></script>
     <script src="js/Interface.js"></script>
     <script src="js/Translator.js"></script>
-    <title>Portfolio - Daniel Koefoed</title>
+    <title>Portfolio ─ Daniel Koefoed</title>
 </head>
 <body>   
     <div class="main_wrapper">
@@ -16,8 +16,10 @@
             <header>
                 <div class="runner" id="title"></div>
                 <div class="settings">
-                    <img src="img/cogs_white.svg" alt="Settings" id="cogs">
-                    <div class="dropdown">                        
+                    <button type="button" id="settings_btn">
+                        <img src="img/cogs_white.svg" alt="Settings" id="cogs">
+                    </button>
+                    <div class="dropdown" id="set_drop">                        
                         <button type="button" class="set_btn" id="lang_select_sv">SV</button>
                         <button type="button" class="set_btn" id="lang_select_en">EN</button>
                         <div id="space"></div>
@@ -32,8 +34,10 @@
             <div id="mob_menu">
                 <div class="runner" id="under_title"></div>
                 <div id="menu_bar">
-                    <img src="img/hamb_white.svg" alt="Menu" id="hamb">
-                    <div class="dropdown">
+                    <button type="button" id="mob_menu_btn">
+                        <img src="img/hamb_white.svg" alt="Menu" id="hamb">
+                    </button>
+                    <div class="dropdown" id="menu_drop">
                         <button type="button" class="mob_btn" id="mob_about_btn"><span class="lang_opt" id="mob_about">Om mig</span></button>
                         <button type="button" class="mob_btn" id="mob_works_btn"><span class="lang_opt" id="mob_works">Utvalda arbeten</span></button>
                         <button type="button" class="mob_btn" id="mob_contact_btn"><span class="lang_opt" id="mob_contact">Kontakt</span></button>
@@ -50,12 +54,12 @@
                     voluptas odit quidem ipsa praesentium assumenda minima at, consequuntur soluta dignissimos ratione 
                     ducimus laborum voluptates est perspiciatis explicabo. Exercitationem ratione atque sequi unde 
                     cupiditate. Eveniet, vitae.</p>
-                    <p><a href="https://github.com/d-c-k">GitHub</a></p>
+                    <p><a href="https://github.com/d-c-k" target="_blank">GitHub</a></p>
             </div>
             
             <div id="main_contact">
                 <p id="main_contact_content">
-                    Tel: 070 - 755 06 60<br> Mail: dc.koefoed@gmail.com<br> <a href="https://www.linkedin.com/in/daniel-koefoed-647306a8/">LinkedIn</a>
+                    Tel: 070 - 755 06 60<br> Mail: dc.koefoed@gmail.com<br><a href="https://www.linkedin.com/in/daniel-koefoed-647306a8/" target="_blank">LinkedIn</a>
                 </p>
             </div>
 
@@ -63,10 +67,17 @@
 
         <div id="main_works">
             <div class="presentation" id="quiz">
-
+                <div class="transparent">           
+                    <div class="pres_text">
+                        <p class="lang_opt" id="pres_quiz">API-quiz, skoluppgift 
+                            <br>Lorem ipsum dolor sit amet consectetur, 
+                            adipisicing elit. Deserunt, sed!</p>
+                        <p><a class="lang_opt" href="" target="_blank">Gå till</a></p>
+                    </div>
+                </div>                                             
             </div>
         </div>
-        
+
     </div>
 </body>
 </html>

@@ -3,7 +3,7 @@ class Interface{
     }
 
     createHeader(){
-        let title = new TextRunner("Portfolio - Daniel Koefoed", "title");
+        let title = new TextRunner("Portfolio ─ Daniel Koefoed", "title");
         title.runner();
     }
 
