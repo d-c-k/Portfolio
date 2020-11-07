@@ -64,4 +64,59 @@ class Interface{
         let underTitle = new TextRunner(text, "under_title");
         underTitle.runner();
     }
+
+    slideShow(){
+        
+        let slideQuiz = document.getElementById("quiz");
+        let slideOldPort = document.getElementById("old_portfolio");
+        let slidePlaceholder = document.getElementById("placeholder");
+        let slideItems = [slideQuiz, slideOldPort, slidePlaceholder];
+
+        let prev = document.getElementById("prev_btn");
+        let next = document.getElementById("next_btn");
+        
+        let dot0 = document.getElementById("dot0");
+        let dot1 = document.getElementById("dot1");
+        let dot2 = document.getElementById("dot2");
+
+        let dots = [dot0, dot1, dot2];
+
+        let i = 0;
+        slideItems[i].style = "display:grid;";
+        dots[i].className = "dot_focus";
+
+        prev.addEventListener("click", function(){
+            if (i != 0){
+                slideItems[i].style = "display:none;";
+                dots[i].className = "dot";
+                i--;
+            }
+            else{
+                slideItems[i].style = "display:none;";
+                dots[i].className = "dot";
+                i = slideItems.length - 1;
+            }
+            
+            slideItems[i].style = "display:grid;";
+            dots[i].className = "dot_focus";
+        });
+
+        next.addEventListener("click", function(){
+            if (i != slideItems.length - 1){
+                slideItems[i].style = "display:none;";
+                dots[i].className = "dot";
+                i++;
+            }
+            else{
+                slideItems[i].style = "display:none;";
+                dots[i].className = "dot";
+                i = 0;
+            }
+
+            slideItems[i].style = "display:grid;";
+            dots[i].className = "dot_focus";
+        })
+
+        
+    }
 }

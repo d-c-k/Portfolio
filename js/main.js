@@ -124,6 +124,8 @@ document.addEventListener("DOMContentLoaded", function(){
         document.getElementById("main_works").style = "display: block;"
         document.getElementById("main_contact").style = "display: none;"
 
+        interface.slideShow();
+
         menuDrop.style = "display:none;"
         menuOn = 1 - menuOn;
     })
