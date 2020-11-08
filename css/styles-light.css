@@ -380,6 +380,30 @@ a {
 }
 
 @media screen and (min-width: 1008px) {
+  body {
+    overflow: hidden;
+  }
+  .main_wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 1rem 2fr 1rem 2fr 1rem 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1rem 2fr 1rem 2fr 1rem 2fr 1fr;
+    -ms-grid-rows: 2rem 2.5rem 2.5rem 2.5rem 1fr;
+        grid-template-rows: 2rem 2.5rem 2.5rem 2.5rem 1fr;
+  }
+  .main_wrapper .head_content {
+    -ms-grid-column: 2;
+    -ms-grid-column-span: 7;
+    grid-column: 2/9;
+    -ms-grid-row: 2;
+    grid-row: 2;
+  }
+  .main_wrapper #inner_content {
+    -ms-grid-column: 2;
+    grid-column: 2;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
   .main_wrapper #inner_content #menu_div {
     -webkit-columns: 1;
             columns: 1;
@@ -390,7 +414,6 @@ a {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    margin-top: 1.5em;
   }
   .main_wrapper #inner_content #menu_div .menu_btn {
     border: none;
@@ -410,11 +433,48 @@ a {
   .main_wrapper #inner_content #menu_div .menu_btn:active {
     color: #569CD6;
   }
-  .main_wrapper #inner_content #menu_div .menu_content {
-    display: none;
-  }
   .main_wrapper #inner_content #mob_menu {
     display: none;
+  }
+  .main_wrapper #main_content {
+    -ms-grid-column: 4;
+    -ms-grid-column-span: 5;
+    grid-column: 4/9;
+    -ms-grid-row: 4;
+    grid-row: 4;
+  }
+  .main_wrapper #main_content p {
+    font-size: 1em;
+  }
+  .main_wrapper #main_works {
+    display: none;
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    grid-column: 1/10;
+    -ms-grid-row: 3;
+    -ms-grid-row-span: 3;
+    grid-row: 3/6;
+  }
+  .main_wrapper #main_works .presentation {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: 1fr 2fr 1rem 2fr 1rem 2fr 1rem 2fr 1fr;
+        grid-template-columns: 1fr 2fr 1rem 2fr 1rem 2fr 1rem 2fr 1fr;
+    z-index: -1;
+  }
+  .main_wrapper #main_works .presentation .transparent {
+    -ms-grid-column: 1;
+    -ms-grid-column-span: 9;
+    grid-column: 1/10;
+  }
+  .main_wrapper #main_works .presentation .pres_text {
+    -ms-grid-column: 4;
+    grid-column: 4;
+  }
+  .main_wrapper #main_works .presentation .pres_text p {
+    font-size: 1em;
+    background-color: #FFFFFF;
+    color: #1E1E1E;
   }
 }
 /*# sourceMappingURL=styles-light.css.map */
