@@ -2,11 +2,18 @@ class Interface{
     constructor(){
         this.setOn = 0;
         this.menuOn = 0;
+        this.slideInit = false;
     }
 
     createHeader(){
         let title = new TextRunner("Portfolio ─ Daniel Koefoed", "title");
-        title.runner();
+        title.runner();        
+        document.getElementById("main_intro").style = "display: block;";
+
+        document.getElementById("title").addEventListener("click", () =>{            
+            this.showElements("main_intro", "block");
+            document.getElementById("under_title").innerHTML = "";
+        })
     }
 
     creatSettingsMenu(){
@@ -23,7 +30,7 @@ class Interface{
 
             this.setOn = 1 - this.setOn;
 
-            document.getElementById("menu_drop").style = "display:none"
+            document.getElementById("menu_drop").style = "display:none;"
             this.menuOn = 0;
         });
 
@@ -100,9 +107,7 @@ class Interface{
         about.innerHTML = "<span class='lang_opt' id='desk_about'>[Om mig]</span>";
 
         about.addEventListener("click", () =>{
-            document.getElementById("main_about").style = "display: block;"
-            document.getElementById("main_works").style = "display: none;"
-            document.getElementById("main_contact").style = "display: none;"
+            this.showElements("main_about", "block");
         })
 
         //----------"Selected works"----------//
@@ -113,11 +118,11 @@ class Interface{
         works.innerHTML = "<span class='lang_opt' id='desk_works'>[Utvalda arbeten]</span>";
 
         works.addEventListener("click", () =>{
-            document.getElementById("main_about").style = "display: none;"
-            document.getElementById("main_works").style = "display: block;"
-            document.getElementById("main_contact").style = "display: none;"
-
-            this.slideShow();
+            this.showElements("main_works", "block");
+            if (this.slideInit === false){
+                this.slideShow();
+                this.slideInit = true;
+            }
         })
 
         //----------"Contact"----------//
@@ -128,9 +133,7 @@ class Interface{
         contact.innerHTML = "<span class='lang_opt' id='desk_contact'>[Kontakt]</span>";
 
         contact.addEventListener("click", () =>{
-            document.getElementById("main_about").style = "display: none;"
-            document.getElementById("main_works").style = "display: none;"
-            document.getElementById("main_contact").style = "display: block;"
+            this.showElements("main_contact", "block");
         })
 
         //----------------------------//
@@ -172,9 +175,7 @@ class Interface{
             let text = "└── " + document.getElementById("mob_about").innerHTML;
             this.mobMenuHeader(text);
 
-            document.getElementById("main_about").style = "display: block;"
-            document.getElementById("main_works").style = "display: none;"
-            document.getElementById("main_contact").style = "display: none;"
+            this.showElements("main_about", "block");
 
             menuDrop.style = "display:none;"
             this.menuOn = 1 - this.menuOn;
@@ -186,11 +187,12 @@ class Interface{
             let text = "└── " + document.getElementById("mob_works").innerHTML;
             this.mobMenuHeader(text);
 
-            document.getElementById("main_about").style = "display: none;"
-            document.getElementById("main_works").style = "display: block;"
-            document.getElementById("main_contact").style = "display: none;"
+            this.showElements("main_works", "block");
 
-            this.slideShow();
+            if (this.slideInit === false){
+                this.slideShow();
+                this.slideInit = true;
+            }
 
             menuDrop.style = "display:none;"
             this.menuOn = 1 - this.menuOn;
@@ -202,9 +204,7 @@ class Interface{
             let text = "└── " + document.getElementById("mob_contact").innerHTML;
             this.mobMenuHeader(text);
 
-            document.getElementById("main_about").style = "display: none;"
-            document.getElementById("main_works").style = "display: none;"
-            document.getElementById("main_contact").style = "display: block;"
+            this.showElements("main_contact", "block");
 
             menuDrop.style = "display:none;"
             this.menuOn = 1 - this.menuOn;
@@ -266,5 +266,14 @@ class Interface{
             dots[i].className = "dot_focus";
             console.log("next: " + i);
         });        
+    }    
+
+    showElements(elementId, status){
+        document.getElementById("main_intro").style = "display: none;"
+        document.getElementById("main_about").style = "display: none;"
+        document.getElementById("main_works").style = "display: none;"
+        document.getElementById("main_contact").style = "display: none;"
+
+        document.getElementById(elementId).style = "display:" + status;
     }
 }
