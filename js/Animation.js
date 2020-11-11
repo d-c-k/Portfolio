@@ -12,17 +12,7 @@ class Animation{
         let string = this.strings[this.i];  
         let node = document.getElementById("main_animation");
         node.innerHTML = "";
-
-        // if (this.i === 0){
-        //     node.style = "color: #CE9178"
-        // }
-        // if (this.i === 1){
-        //     node.style = "color: #569CD6"
-        // }
-        // if (this.i === 2){
-        //     node.style = "color: #D9E577"
-        // }
-
+        
         let textRunner = new TextRunner(string, "main_animation", 10);
         textRunner.runner();
 
