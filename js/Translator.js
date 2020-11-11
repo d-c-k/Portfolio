@@ -22,44 +22,56 @@ class Translator{
 }
 
 let translations = [
-    {
+    {//0
         sv: "[Om mig]",
         en: "[About]"
-    },
-    {
-        sv: "Jag heter Daniel.",
-        en: "My name is Daniel."
-    },
-    {
+    },    
+    {//1
         sv: "[Utvalda arbeten]",
         en: "[Selected works]"
     },
-    {
+    {//2
         sv: "[Kontakt]",
         en: "[Contact]"
     },
-    {
+    {//3
         sv: "Om mig",
         en: "About",
     },
-    {
+    {//4
         sv: "Utvalda arbeten",
         en: "Selected works"
     },
-    {
+    {//5
         sv: "Kontakt",
         en: "Contact"
     },
-    {
-        sv: "tmp SVENSKA",
-        en: "tmp ENGELSKA"
+    {//6
+        sv: "Om mig på svenska.",
+        en: "About me in english."
     },
-    {
-        sv: "tmp SVENSKA",
-        en: "tmp ENGELSKA"
+    {//7
+        sv: "Quiz med frågor hämtade med API",
+        en: "Quiz with questions from API"
     },
-    {
-        sv: "Gå till",
-        en: "Go to"
+    {//8
+        sv: ">> Gå till >>",
+        en: ">> Go to >>"
+    },
+    {//9
+        sv: "Min tidigare portfolio.",
+        en: "My previous portfolio."
+    },
+    {//10
+        sv: ">> Gå till >>",
+        en: ">> Go to >>"
+    },
+    {//11
+        sv: "Placeholder",
+        en: "Placeholder"
+    },
+    {//12
+        sv: ">> Gå till >>",
+        en: ">> Go to >>"
     }
 ]

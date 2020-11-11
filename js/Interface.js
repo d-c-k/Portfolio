@@ -8,12 +8,17 @@ class Interface{
     createHeader(){
         let title = new TextRunner("Portfolio ─ Daniel Koefoed", "title");
         title.runner();        
-        document.getElementById("main_intro").style = "display: block;";
+        //document.getElementById("main_animation").style = "display: block;";
 
         document.getElementById("title").addEventListener("click", () =>{            
-            this.showElements("main_intro", "block");
+            this.showElements("main_animation", "block");
             document.getElementById("under_title").innerHTML = "";
         })
+    }
+
+    aniamtionLoop(){        
+        let animation = new Animation();
+        animation.animationCycle();
     }
 
     creatSettingsMenu(){
@@ -39,15 +44,15 @@ class Interface{
             translator.translate();
 
             let text = "";
+            if (underTitle.innerHTML === "└── " + translations[3].en || underTitle.innerHTML === "└── " + translations[3].sv){
+                text = "└── " + translations[3].sv;
+            }
             if (underTitle.innerHTML === "└── " + translations[4].en || underTitle.innerHTML === "└── " + translations[4].sv){
                 text = "└── " + translations[4].sv;
             }
             if (underTitle.innerHTML === "└── " + translations[5].en || underTitle.innerHTML === "└── " + translations[5].sv){
                 text = "└── " + translations[5].sv;
-            }
-            if (underTitle.innerHTML === "└── " + translations[6].en || underTitle.innerHTML === "└── " + translations[6].sv){
-                text = "└── " + translations[6].sv;
-            }
+            }            
             underTitle.innerHTML = "";
             this.mobMenuHeader(text);
 
@@ -59,15 +64,15 @@ class Interface{
             translator.translate();
 
             let text = "";
+            if (underTitle.innerHTML === "└── " + translations[3].sv || underTitle.innerHTML === "└── " + translations[3].en){
+                text = "└── " + translations[3].en;
+            }
             if (underTitle.innerHTML === "└── " + translations[4].sv || underTitle.innerHTML === "└── " + translations[4].en){
                 text = "└── " + translations[4].en;
             }
             if (underTitle.innerHTML === "└── " + translations[5].sv || underTitle.innerHTML === "└── " + translations[5].en){
                 text = "└── " + translations[5].en;
-            }
-            if (underTitle.innerHTML === "└── " + translations[6].sv || underTitle.innerHTML === "└── " + translations[6].en){
-                text = "└── " + translations[6].en;
-            }
+            }            
             underTitle.innerHTML = "";
             this.mobMenuHeader(text);
 
@@ -231,8 +236,6 @@ class Interface{
         slideItems[i].style = "display:grid;";
         dots[i].className = "dot_focus";
 
-        console.log("1: " + i);
-
         prev.addEventListener("click", () =>{
             if (i != 0){
                 slideItems[i].style = "display:none;";
@@ -247,7 +250,6 @@ class Interface{
             
             slideItems[i].style = "display:grid;";
             dots[i].className = "dot_focus";
-            console.log("prev: " + i);
         });
 
         next.addEventListener("click", () =>{
@@ -264,12 +266,11 @@ class Interface{
 
             slideItems[i].style = "display:grid;";
             dots[i].className = "dot_focus";
-            console.log("next: " + i);
         });        
     }    
 
     showElements(elementId, status){
-        document.getElementById("main_intro").style = "display: none;"
+        document.getElementById("main_animation").style = "display: none;"
         document.getElementById("main_about").style = "display: none;"
         document.getElementById("main_works").style = "display: none;"
         document.getElementById("main_contact").style = "display: none;"

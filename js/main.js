@@ -4,5 +4,6 @@ document.addEventListener("DOMContentLoaded", function(){
     interface.createHeader();
     interface.creatSettingsMenu();
     interface.createMenu();  
-    interface.createMenuMobile();  
+    interface.createMenuMobile(); 
+    interface.aniamtionLoop();
 })
