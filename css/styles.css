@@ -228,7 +228,8 @@ body {
 
 .main_wrapper #main_content #main_animation {
   font-size: 16px;
-  width: 176px;
+  min-width: 176px;
+  max-width: 176px;
   color: #FFFFFF;
   line-height: 16px;
   margin: auto;
