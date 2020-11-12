@@ -285,9 +285,15 @@ body{
                 color: $text_class;
             }
 
+            button:hover{
+                color: #FFFFFF;
+                transition: 1s;
+            }
+
             button:focus{
                 @include btn_focus();
             }
+
             .dots{
                 display: flex;
                 flex-direction: row;

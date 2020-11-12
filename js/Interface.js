@@ -113,6 +113,7 @@ class Interface{
 
         about.addEventListener("click", () =>{
             this.showElements("main_about", "block");
+            //this.deskMenuSelected("desk_about", 0);
         })
 
         //----------"Selected works"----------//
@@ -124,6 +125,7 @@ class Interface{
 
         works.addEventListener("click", () =>{
             this.showElements("main_works", "block");
+            //this.deskMenuSelected("desk_works", 1);
             if (this.slideInit === false){
                 this.slideShow();
                 this.slideInit = true;
@@ -139,6 +141,7 @@ class Interface{
 
         contact.addEventListener("click", () =>{
             this.showElements("main_contact", "block");
+            //this.deskMenuSelected("desk_contact", 2);
         })
 
         //----------------------------//
@@ -151,6 +154,24 @@ class Interface{
 
         innerContent.prepend(menuDiv);
     }
+
+    // deskMenuSelected(elementId, index){
+    //     //let langcode = document.documentElement.getAttribute("lang");
+    //     if (document.documentElement.getAttribute("lang") === "sv"){
+    //         document.getElementById("desk_about").innerHTML = translations[0].sv;
+    //         document.getElementById("desk_works").innerHTML = translations[1].sv;
+    //         document.getElementById("desk_contact").innerHTML = translations[2].sv;
+
+    //         document.getElementById(elementId).innerHTML = "└─" + translations[index].sv;
+    //     }
+    //     else {
+    //         document.getElementById("desk_about").innerHTML = translations[0].en;
+    //         document.getElementById("desk_works").innerHTML = translations[1].en;
+    //         document.getElementById("desk_contact").innerHTML = translations[2].en;
+
+    //         document.getElementById(elementId).innerHTML = "└─" + translations[index].en;
+    //     }        
+    // }
 
     mobMenuHeader(text){
         

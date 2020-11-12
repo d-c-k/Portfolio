@@ -327,6 +327,12 @@ body {
   color: #4EC9B0;
 }
 
+.main_wrapper #main_works #slide_control button:hover {
+  color: #FFFFFF;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
 .main_wrapper #main_works #slide_control button:focus {
   outline: none;
 }

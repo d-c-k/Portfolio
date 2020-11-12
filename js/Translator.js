@@ -51,16 +51,16 @@ let translations = [
         en: "About me in english."
     },
     {//7
-        sv: "Quiz med frågor hämtade med API",
-        en: "Quiz with questions from API"
+        sv: "Quiz-applikation, skoluppgift.<br>Ett quiz med frågor hämtade via API. Välj om du vill besvara mellan 5 och 10 frågor, markera svarsalternativet eller alternativen du tror stämmer och gå vidare till nästa fråga. Om du ångrar ett svar kan du backa så långt du vill innan du väljer att låsa och gå vidare. På resultatsidan visas din totala poäng, varje fråga skrivs ut i en ruta med ditt svar och eventuellt rätt alternativ om det du svarade skulle vara fel.",
+        en: "Quiz application, schoolassignment.<br>A quiz with questions fetched via an API. Choose if you want to answer between 5 and 10 questions, select the alternative or alternatives you belive is correct and move on to the next question. If you wish to change an answer on a previous question you may go back as far as you like before locking your solution. On the result screen your total score is shown, every question is printed with your selected answer and possible correct answers if what you chose happend to be incorrect."
     },
     {//8
         sv: ">> Gå till >>",
         en: ">> Go to >>"
     },
     {//9
-        sv: "Min tidigare portfolio.",
-        en: "My previous portfolio."
+        sv: "Min förra portfolio.<br>Ska ersättas så snart som möjligt.",
+        en: "My previous portfolio.<br>To be replaced ASAP."
     },
     {//10
         sv: ">> Gå till >>",
