@@ -6,26 +6,30 @@ class Interface{
     }
 
     createHeader(){
+        //calls the "TextRunner" -class to print out the page-title in the header
         let title = new TextRunner("Portfolio ─ Daniel Koefoed", "title");
         title.runner();        
-        //document.getElementById("main_animation").style = "display: block;";
 
-        document.getElementById("title").addEventListener("click", () =>{            
+        document.getElementById("title").addEventListener("click", () =>{  
+            //displays the landing-page and hides other content when you press the title         
             this.showElements("main_animation", "block");
             document.getElementById("under_title").innerHTML = "";
         })
     }
 
-    aniamtionLoop(){        
+    aniamtionLoop(){  
+        //calls the "Animation"-class to run the ASCII-display on the landing page      
         let animation = new Animation();
         animation.animationCycle();
     }
 
-    creatSettingsMenu(){
+    createSettingsMenu(){
+        //controls the settings-menu
         let underTitle = document.getElementById("under_title");
         let setDrop = document.getElementById("set_drop");
 
         document.getElementById("settings_btn").addEventListener("click", () =>{
+            //hiding menu when button is pressed
             if (this.setOn === 0){
                 setDrop.style = "display: flex; flex-direction: column; justify-content: space-between;"
             }
@@ -40,9 +44,11 @@ class Interface{
         });
 
         document.getElementById("lang_select_sv").addEventListener("click", () =>{
+            //calls "Translator"-class to switch language to swedish
             let translator = new Translator("sv");
             translator.translate();
 
+            //updates the text for the sub-header titles so that the correct string is printed out again
             let text = "";
             if (underTitle.innerHTML === "└── " + translations[3].en || underTitle.innerHTML === "└── " + translations[3].sv){
                 text = "└── " + translations[3].sv;
@@ -59,7 +65,9 @@ class Interface{
             setDrop.style = "display:none;"
             this.setOn = 1 - this.setOn;
         })
+        
         document.getElementById("lang_select_en").addEventListener("click", () =>{
+            //calls "Translator"-class to switch language to english
             let translator = new Translator("en");
             translator.translate();
 
@@ -80,6 +88,8 @@ class Interface{
             this.setOn = 1 - this.setOn;
         })
 
+        //switch between the two color-schemes by changing stylesheet, also switching svg-files for menu-buttons
+
         document.getElementById("theme_select_dark").addEventListener("click", () =>{
             document.getElementById("color_theme").setAttribute("href", "css/styles.css");
             document.getElementById("cogs").setAttribute("src", "img/cogs_white.svg");
@@ -99,6 +109,8 @@ class Interface{
     }
 
     createMenu(){
+        //creates the menu-buttons for desktop
+
         let innerContent = document.getElementById("inner_content");
 
         let menuDiv = document.createElement("div");
@@ -113,7 +125,6 @@ class Interface{
 
         about.addEventListener("click", () =>{
             this.showElements("main_about", "block");
-            //this.deskMenuSelected("desk_about", 0);
         })
 
         //----------"Selected works"----------//
@@ -125,7 +136,6 @@ class Interface{
 
         works.addEventListener("click", () =>{
             this.showElements("main_works", "block");
-            //this.deskMenuSelected("desk_works", 1);
             if (this.slideInit === false){
                 this.slideShow();
                 this.slideInit = true;
@@ -141,7 +151,6 @@ class Interface{
 
         contact.addEventListener("click", () =>{
             this.showElements("main_contact", "block");
-            //this.deskMenuSelected("desk_contact", 2);
         })
 
         //----------------------------//
@@ -155,31 +164,15 @@ class Interface{
         innerContent.prepend(menuDiv);
     }
 
-    // deskMenuSelected(elementId, index){
-    //     //let langcode = document.documentElement.getAttribute("lang");
-    //     if (document.documentElement.getAttribute("lang") === "sv"){
-    //         document.getElementById("desk_about").innerHTML = translations[0].sv;
-    //         document.getElementById("desk_works").innerHTML = translations[1].sv;
-    //         document.getElementById("desk_contact").innerHTML = translations[2].sv;
-
-    //         document.getElementById(elementId).innerHTML = "└─" + translations[index].sv;
-    //     }
-    //     else {
-    //         document.getElementById("desk_about").innerHTML = translations[0].en;
-    //         document.getElementById("desk_works").innerHTML = translations[1].en;
-    //         document.getElementById("desk_contact").innerHTML = translations[2].en;
-
-    //         document.getElementById(elementId).innerHTML = "└─" + translations[index].en;
-    //     }        
-    // }
-
     mobMenuHeader(text){
+        //printing the sub-header title
         
         let underTitle = new TextRunner(text, "under_title");
         underTitle.runner();
     }
 
     createMenuMobile(){
+        //functions for the buttons in the "hamburger-menu" on mobile
         let underTitle = document.getElementById("under_title");
         let menuDrop = document.getElementById("menu_drop");
 
@@ -238,7 +231,8 @@ class Interface{
     }
 
     slideShow(){
-        
+        //the method controlling the carousel
+
         let slideQuiz = document.getElementById("quiz");
         let slideOldPort = document.getElementById("old_portfolio");
         let slidePlaceholder = document.getElementById("placeholder");
@@ -291,6 +285,8 @@ class Interface{
     }    
 
     showElements(elementId, status){
+        //method for showing the chosen elements while hiding the others
+        
         document.getElementById("main_animation").style = "display: none;"
         document.getElementById("main_about").style = "display: none;"
         document.getElementById("main_works").style = "display: none;"

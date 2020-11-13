@@ -327,12 +327,6 @@ body {
   color: #4EC9B0;
 }
 
-.main_wrapper #main_works #slide_control button:hover {
-  color: #FFFFFF;
-  -webkit-transition: 1s;
-  transition: 1s;
-}
-
 .main_wrapper #main_works #slide_control button:focus {
   outline: none;
 }
@@ -425,7 +419,11 @@ a {
 
 @media screen and (min-width: 1008px) {
   body {
-    overflow: hidden;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  body::-webkit-scrollbar {
+    display: none;
   }
   .main_wrapper {
     display: -ms-grid;
@@ -544,6 +542,11 @@ a {
   .main_wrapper #main_works #slide_control button {
     pointer-events: auto;
     font-size: 2.5rem;
+  }
+  .main_wrapper #main_works #slide_control button:hover {
+    color: #FFFFFF;
+    -webkit-transition: 1s;
+    transition: 1s;
   }
   .main_wrapper #main_works #slide_control .dots {
     width: 10%;

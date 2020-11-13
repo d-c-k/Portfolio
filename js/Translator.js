@@ -4,10 +4,13 @@ class Translator{
     }
 
     translate(){
+        /*the method that switches out <span>-tags marked "lang_opt" to the corresponding translation in the "translations"-objekt
+          also changes the "lang"-attribute in the <html>-tag */
+
         document.documentElement.setAttribute("lang", this.langCode);
 
         let texts = document.getElementsByClassName("lang_opt")
-        console.log(texts);
+        //console.log(texts);
 
         for (let i = 0; i < texts.length; i++){
             if (this.langCode == "sv"){
@@ -47,8 +50,8 @@ let translations = [
         en: "Contact"
     },
     {//6
-        sv: "Om mig på svenska.",
-        en: "About me in english."
+        sv: "Hej!<br>Jag är en aspirerande fullstack-utvecklare som för närvarande pluggar på Nackademin i Stockholm. Tidigare har jag bland annat studerat förpackningsdesign samt jobbat som formgivare och originalare av trycksaker. Om något här på sidan skulle väcka ditt intresse så tveka inte att höra av dig!<br><br>/Daniel",
+        en: "Hello!<br>I'm an aspiring fullstack developer currently studying at Nackademin in Stockholm, Sweden. I've previously studied packaging design and worked as a designer of printed media. If you find anything on this page that sparks your interest, don't hesitate to reach out!<br><br>/Daniel"
     },
     {//7
         sv: "Quiz-applikation, skoluppgift.<br>Ett quiz med frågor hämtade via API. Välj om du vill besvara mellan 5 och 10 frågor, markera svarsalternativet eller alternativen du tror stämmer och gå vidare till nästa fråga. Om du ångrar ett svar kan du backa så långt du vill innan du väljer att låsa och gå vidare. På resultatsidan visas din totala poäng, varje fråga skrivs ut i en ruta med ditt svar och eventuellt rätt alternativ om det du svarade skulle vara fel.",

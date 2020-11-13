@@ -1,0 +1,30 @@
+Scrum:
+En arbetsmetod där man delar upp arbetet i mindre delar som utförs under så kallade sprintar, vanligtvis från några dagar till ett par veckor. 
+Vid varje avslutad sprint presenteras resultaten för en s.k. produktägare som representerar kunden. På detta vis, med regelbundna avstämningar,
+följer arbetet kundens vision och önskemål närmare och risken för missförstånd minskar.
+
+För och nackdelar med scrum:
+Något jag tyckte var bra med scrum var att det hela tiden var tydligt exakt vad man skulle göra. Tät kontakt inom gruppen och 
+tydligt avstyckade ansvarsområden gjorde att arbetet flöt på friktionsfritt även fast det mesta gjordes på distans.
+Jag kan även verkligen förstå nyttan av regelbundna och täta redovisningar för produktägaren i större projekt.
+En möjlig nackdel jag kan se är svårigheter i att uppskatta hur mycket man hinner med under en sprint.
+
+Grafisk profil:
+En manual för hur ett företag ska presenteras grafiskt. Bör innehålla riktlinjer och regler för hur t.ex logotyp, färger och typsnitt ska användas.
+Syftet med en grafisk manual är att ge alla delar kopplade till företaget en så enhetlig känsla som möjligt även när grafiskt material produceras
+på olika ställen och av olika människor och andra företag.
+
+För och nackdelar med grafisk profil:
+Jag kan inte direkt se några nackdelar med en grafisk profil. Grafisk form/design ska enligt mig vara funktionell i första hand och estetiskt 
+tilltalande i andra, i annat fall sysslar man med dekoration. Att vara konsekvent i sitt formspråk är väldigt viktigt för ett företag, inte bara 
+för igenkänningsfaktorn utan kanske framför allt för att ge ett professionellt intryck.
+
+Tillgänglighetsriktlinjer:
+För att göra internet tillgängligt för så många som möjligt har det satts upp riktlinjer för hur man kan anpassa sitt digitala material.
+Till exempel ska alla element som inte är text ha en alternativ beskrivning så att skärmläsar-program kan beskriva innehållet för synskadade.
+Ett annat exempel kan vara att man i koden anger vilket språk som används så att sidan kan översättas automatiskt.
+
+För och nackdelar med tillgänglighetsriktlinjerna:
+Att så många som möjligt kan ta del av ditt offentliga material är ju alltid en styrka och flera av riktlinjerna är ju egentligen exempel på bra 
+design och bör implementeras alldeles oavsett. Dock finns det en del som kräver större insatser t.ex. syntolkning och textning av videomaterial 
+vilket kanske inte alltid är realistiskt beroende på budget och tid.
