@@ -233,10 +233,11 @@ class Interface{
     slideShow(){
         //the method controlling the carousel
 
+        let slideAudioPlayer = document.getElementById("audioplayer");
         let slideQuiz = document.getElementById("quiz");
         let slideOldPort = document.getElementById("old_portfolio");
-        let slidePlaceholder = document.getElementById("placeholder");
-        let slideItems = [slideQuiz, slideOldPort, slidePlaceholder];
+        
+        let slideItems = [slideAudioPlayer, slideQuiz, slideOldPort];
 
         let prev = document.getElementById("prev_btn");
         let next = document.getElementById("next_btn");
