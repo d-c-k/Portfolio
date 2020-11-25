@@ -52,6 +52,7 @@ $text_javadocKeyword: #D9E577;
     font-family: Consolas, monospace;
 }
 body{
+    overflow: hidden;
     margin: 0;
     background-color: $background;
 }
@@ -230,6 +231,10 @@ body{
             color: $text_main;
             line-height: 16px;
             margin: auto;
+        }
+
+        .desktop_animation_container{
+            display: none;
         }
 
         #main_about{
@@ -450,17 +455,40 @@ a{
         } 
         
         #main_content{
-            grid-column: 4;
+            grid-column: 4/9;
             grid-row: 4;
 
             p{
                 font-size: 1rem;
                 line-height: 1.2rem;
+                padding: 0 0 0 0.2rem;
+            }
+
+            .text_container{
+                display: grid;
+                grid-template-columns: 1fr 2rem 1fr 2rem 1fr;
+
+                .text_inner{
+                    grid-column: 1;
+                }
             }
 
             #main_animation{
-                margin:0;
+                display: none;
             }
+
+            #desktop_animation_container{
+                display:flex;
+                justify-content: space-between;
+
+                .main_animation_desktop{
+                    font-size: 16px;
+                    min-width: 176px;
+                    max-width: 200px;
+                    color: $text_main;
+                    line-height: 16px;
+                }
+            }            
         }
 
         #main_works{

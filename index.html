@@ -20,7 +20,7 @@
                 <div class="runner" id="title"></div>
                 <div class="settings">
                     <button type="button" id="settings_btn">
-                        <img src="img/cogs_white.svg" alt="Settings" id="cogs">
+                        <img src="icons/cogs_white.svg" alt="Settings" id="cogs">
                     </button>
                     <div class="dropdown" id="set_drop">                        
                         <button type="button" class="set_btn" id="lang_select_sv">SV</button>
@@ -40,7 +40,7 @@
                 <div class="runner" id="under_title"></div>
                 <div id="menu_bar">
                     <button type="button" id="mob_menu_btn">
-                        <img src="img/hamb_white.svg" alt="Menu" id="hamb">
+                        <img src="icons/hamb_white.svg" alt="Menu" id="hamb">
                     </button>
                     <div class="dropdown" id="menu_drop">
                         <button type="button" class="mob_btn" id="mob_about_btn"><span class="lang_opt" id="mob_about">Om mig</span></button>
@@ -58,37 +58,33 @@
             <!--ASCII-animation on landing page-->
 
             <div id="main_animation"></div>
+            <div id="desktop_animation_container">
+                <div class="main_animation_desktop" id="da_0"></div>
+                <div class="main_animation_desktop" id="da_1"></div>
+                <div class="main_animation_desktop" id="da_2"></div>
+            </div>
+            
+            
 
             <!--Content shown when about-button is pressed-->
 
-            <div id="main_about">
-                <p class="lang_opt" id="main_about_content">Hej!<br>Jag är en aspirerande fullstack-utvecklare som för närvarande pluggar på 
-                Nackademin i Stockholm. Tidigare har jag bland annat studerat förpackningsdesign samt jobbat som formgivare och originalare av trycksaker. 
-                Om något här på sidan skulle väcka ditt intresse så tveka inte att höra av dig!<br><br>/Daniel</p>
-                <p><a href="https://github.com/d-c-k" target="_blank">GitHub</a></p>
-                <p>Om utbildningen:<br><br>Webbutvecklare fullstack open source ger dig en bred programmeringskompetens inom både backend och frontend. Du kommer 
-                    att kunna utveckla interaktiva webbapplikationer i bland annat NodeJS, PHP och JavaScript för komplexa miljöer med hänsyn till 
-                    prestanda och stora datamängder. Du kommer även att kunna utveckla moderna applikationer med hjälp av HTML, CSS och olika 
-                    JavaScript-bibliotek. Utbildningen Webbutvecklare fullstack open source ger dig kunskap om de specifika utvecklingsmiljöer, 
-                    programspråk och riktlinjer som webben ställer krav på idag.
-
-                    Utöver detta lär du dig även att samarbeta i agila projekt, från kodning till implementation. Du kommer att vara van att arbeta 
-                    på ett lösningsorienterat sätt, både självständigt och i ett utvecklingsteam.
-                    
-                    Utbildningen webbutvecklare fullstack open source bedrivs delvis på engelska då det är det ledande internationella språket 
-                    inom IT och det är viktigt att du som utvecklare kan kommunicera lösningar och ta till dig uppdragsbeskrivningar på engelska 
-                    samt arbeta med yrkesrelaterade programvaror och verktyg som oftast är på engelska.
-                    
-                    Att studera på Nackademin innebär att du studerar till ett yrke och inte ett ämne. Detta kräver av dig som student disciplin, 
-                    stor drivkraft och eget ansvar för dina studier. Du ansvarar själv för dina studier och vi ger dig förutsättningar för att lyckas!<br><br></p>
+            <div class="text_container" id="main_about">
+                <div class="text_inner">
+                    <p class="lang_opt" id="main_about_content">Hej!<br>Jag är en aspirerande fullstack-utvecklare som för närvarande pluggar på 
+                        Nackademin i Stockholm. Tidigare har jag bland annat studerat förpackningsdesign samt jobbat som formgivare och originalare av trycksaker. 
+                        Om något här på sidan skulle väcka ditt intresse så tveka inte att höra av dig!<br><br>/Daniel</p>
+                    <p><a href="https://github.com/d-c-k" target="_blank">GitHub</a></p> 
+                </div>                               
             </div>
 
             <!--Content shown when contact-button is pressed-->
             
-            <div id="main_contact">
-                <p id="main_contact_content">
-                    Tel: 070 - 755 06 60<br> Mail: dc.koefoed@gmail.com<br><a href="https://www.linkedin.com/in/daniel-koefoed-647306a8/" target="_blank">LinkedIn</a>
-                </p>
+            <div class="text_container" id="main_contact">
+                <div class="text_inner">
+                    <p id="main_contact_content">
+                        Tel: 070 - 755 06 60<br> Mail: dc.koefoed@gmail.com<br><a href="https://www.linkedin.com/in/daniel-koefoed-647306a8/" target="_blank">LinkedIn</a>
+                    </p>
+                </div>                
             </div>
 
         </div>

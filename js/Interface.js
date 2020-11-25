@@ -11,16 +11,26 @@ class Interface{
         title.runner();        
 
         document.getElementById("title").addEventListener("click", () =>{  
-            //displays the landing-page and hides other content when you press the title         
-            this.showElements("main_animation", "block");
+            //displays the landing-page and hides other content when you press the title     
+            if (window.innerWidth < 1008){
+                this.showElements("main_animation", "block");
+            } else{
+                this.showElements("desktop_animation_container", "flex");
+            } 
+            
             document.getElementById("under_title").innerHTML = "";
         })
     }
 
     aniamtionLoop(){  
-        //calls the "Animation"-class to run the ASCII-display on the landing page      
+        //calls the "Animation"-class to run the ASCII-display on the landing page  
         let animation = new Animation();
-        animation.animationCycle();
+
+        if (window.innerWidth < 1008){
+            animation.animationCycle();
+        } else{
+            animation.desktopAnimation();
+        }   
     }
 
     createSettingsMenu(){
@@ -92,16 +102,16 @@ class Interface{
 
         document.getElementById("theme_select_dark").addEventListener("click", () =>{
             document.getElementById("color_theme").setAttribute("href", "css/styles.css");
-            document.getElementById("cogs").setAttribute("src", "img/cogs_white.svg");
-            document.getElementById("hamb").setAttribute("src", "img/hamb_white.svg");
+            document.getElementById("cogs").setAttribute("src", "icons/cogs_white.svg");
+            document.getElementById("hamb").setAttribute("src", "icons/hamb_white.svg");
 
             setDrop.style = "display:none;"
             this.setOn = 1 - this.setOn;
         })
         document.getElementById("theme_select_light").addEventListener("click", () =>{
             document.getElementById("color_theme").setAttribute("href", "css/styles-light.css");
-            document.getElementById("cogs").setAttribute("src", "img/cogs_dark.svg");
-            document.getElementById("hamb").setAttribute("src", "img/hamb_dark.svg");
+            document.getElementById("cogs").setAttribute("src", "icons/cogs_dark.svg");
+            document.getElementById("hamb").setAttribute("src", "icons/hamb_dark.svg");
 
             setDrop.style = "display:none;"
             this.setOn = 1 - this.setOn;
@@ -124,7 +134,7 @@ class Interface{
         about.innerHTML = "<span class='lang_opt' id='desk_about'>[Om mig]</span>";
 
         about.addEventListener("click", () =>{
-            this.showElements("main_about", "block");
+            this.showElements("main_about", "grid");
         })
 
         //----------"Selected works"----------//
@@ -150,7 +160,7 @@ class Interface{
         contact.innerHTML = "<span class='lang_opt' id='desk_contact'>[Kontakt]</span>";
 
         contact.addEventListener("click", () =>{
-            this.showElements("main_contact", "block");
+            this.showElements("main_contact", "grid");
         })
 
         //----------------------------//
@@ -231,64 +241,57 @@ class Interface{
     }
 
     slideShow(){
-        //the method controlling the carousel
-
-        let slideAudioPlayer = document.getElementById("audioplayer");
-        let slideQuiz = document.getElementById("quiz");
-        let slideOldPort = document.getElementById("old_portfolio");
+        //the method controlling the carousel     
         
-        let slideItems = [slideAudioPlayer, slideQuiz, slideOldPort];
+        let slideItems = document.getElementsByClassName("presentation")
 
         let prev = document.getElementById("prev_btn");
-        let next = document.getElementById("next_btn");
+        let next = document.getElementById("next_btn"); 
         
-        let dot0 = document.getElementById("dot0");
-        let dot1 = document.getElementById("dot1");
-        let dot2 = document.getElementById("dot2");
-
-        let dots = [dot0, dot1, dot2];
-
+        let dots = document.getElementsByClassName("dot");
+        
         let i = 0;
         slideItems[i].style = "display:grid;";
-        dots[i].className = "dot_focus";
+        dots[i].classList.add("dot_focus");
 
         prev.addEventListener("click", () =>{
             if (i != 0){
                 slideItems[i].style = "display:none;";
-                dots[i].className = "dot";
+                dots[i].classList.remove("dot_focus");
                 i--;
             }
             else{
                 slideItems[i].style = "display:none;";
-                dots[i].className = "dot";
+                dots[i].classList.remove("dot_focus");
                 i = slideItems.length - 1;
             }
             
             slideItems[i].style = "display:grid;";
-            dots[i].className = "dot_focus";
+            dots[i].classList.add("dot_focus");
         });
 
         next.addEventListener("click", () =>{
             if (i != slideItems.length - 1){
                 slideItems[i].style = "display:none;";
-                dots[i].className = "dot";
+                dots[i].classList.remove("dot_focus");
                 i++;
             }
             else{
                 slideItems[i].style = "display:none;";
-                dots[i].className = "dot";
+                dots[i].classList.remove("dot_focus");
                 i = 0;
             }
 
             slideItems[i].style = "display:grid;";
-            dots[i].className = "dot_focus";
-        });        
+            dots[i].classList.add("dot_focus");
+        });
     }    
 
     showElements(elementId, status){
         //method for showing the chosen elements while hiding the others
         
         document.getElementById("main_animation").style = "display: none;"
+        document.getElementById("desktop_animation_container").style = "display:none;"
         document.getElementById("main_about").style = "display: none;"
         document.getElementById("main_works").style = "display: none;"
         document.getElementById("main_contact").style = "display: none;"

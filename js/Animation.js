@@ -24,4 +24,14 @@ class Animation{
         }
         setTimeout(this.animationCycle.bind(this), 7000);
     }
+
+    desktopAnimation(){
+
+        let divs = document.getElementsByClassName("main_animation_desktop");
+
+        for (let i = 0; i < divs.length; i++){
+            let textRunner = new TextRunner(this.strings[i], "da_" + i, 10);
+            textRunner.runner();
+        }
+    }
 }         
