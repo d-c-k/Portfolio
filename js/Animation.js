@@ -29,9 +29,13 @@ class Animation{
 
         let divs = document.getElementsByClassName("main_animation_desktop");
 
-        for (let i = 0; i < divs.length; i++){
-            let textRunner = new TextRunner(this.strings[i], "da_" + i, 10);
-            textRunner.runner();
+        for (let i = 0; i < divs.length; i++) {
+            let timer = (3800 * i);
+
+            setTimeout(() => {
+                let textRunner = new TextRunner(this.strings[i], "da_" + i, 10);
+                textRunner.runner();
+            }, timer)            
         }
     }
 }         

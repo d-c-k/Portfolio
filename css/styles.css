@@ -366,15 +366,15 @@ body {
 }
 
 .main_wrapper #main_works #audioplayer {
-  background-image: url(../img/audioplayer_screen.JPG);
+  background-image: url(../img/audioplayer_screen_mob.jpg);
 }
 
 .main_wrapper #main_works #quiz {
-  background-image: url(../img/quiz_screen.JPG);
+  background-image: url(../img/quiz_screen_mob.jpg);
 }
 
 .main_wrapper #main_works #old_portfolio {
-  background-image: url(../img/old_portfolio_screen.JPG);
+  background-image: url(../img/old_portfolio_screen_mob.jpg);
 }
 
 p {
@@ -584,6 +584,15 @@ a {
     width: 10%;
     -ms-flex-item-align: end;
         align-self: flex-end;
+  }
+  .main_wrapper #main_works #audioplayer {
+    background-image: url(../img/audioplayer_screen.JPG);
+  }
+  .main_wrapper #main_works #quiz {
+    background-image: url(../img/quiz_screen.JPG);
+  }
+  .main_wrapper #main_works #old_portfolio {
+    background-image: url(../img/old_portfolio_screen.JPG);
   }
 }
 /*# sourceMappingURL=styles.css.map */

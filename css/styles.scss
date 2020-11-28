@@ -334,17 +334,16 @@ body{
             }
         }
         
-        //background-images for the different cases        
         #audioplayer{
-            background-image: url(../img/audioplayer_screen.JPG);
+            background-image: url(../img/audioplayer_screen_mob.jpg);
         }
 
         #quiz{
-            background-image: url(../img/quiz_screen.JPG);
+            background-image: url(../img/quiz_screen_mob.jpg);
         }
 
         #old_portfolio{
-            background-image: url(../img/old_portfolio_screen.JPG);
+            background-image: url(../img/old_portfolio_screen_mob.jpg);
         }
     }
 }
@@ -547,6 +546,18 @@ a{
                     width: 10%;
                     align-self: flex-end;
                 }
+            }
+
+            #audioplayer{
+                background-image: url(../img/audioplayer_screen.JPG);
+            }
+    
+            #quiz{
+                background-image: url(../img/quiz_screen.JPG);
+            }
+    
+            #old_portfolio{
+                background-image: url(../img/old_portfolio_screen.JPG);
             }
         }
     }    
