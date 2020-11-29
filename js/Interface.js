@@ -3,6 +3,7 @@ class Interface{
         this.setOn = 0;
         this.menuOn = 0;
         this.slideInit = false;
+        this.brightTheme = false;
     }
 
     createHeader(){
@@ -53,68 +54,72 @@ class Interface{
             this.menuOn = 0;
         });
 
-        document.getElementById("lang_select_sv").addEventListener("click", () =>{
-            //calls "Translator"-class to switch language to swedish
-            let translator = new Translator("sv");
-            translator.translate();
+        document.getElementById("lang_select").addEventListener("click", () =>{
+            if (document.documentElement.lang != "sv"){
+                document.getElementById("lang_select").innerHTML = "EN";
+                let translator = new Translator("sv");
+                translator.translate();
 
-            //updates the text for the sub-header titles so that the correct string is printed out again
-            let text = "";
-            if (underTitle.innerHTML === "└── " + translations[3].en || underTitle.innerHTML === "└── " + translations[3].sv){
-                text = "└── " + translations[3].sv;
-            }
-            if (underTitle.innerHTML === "└── " + translations[4].en || underTitle.innerHTML === "└── " + translations[4].sv){
-                text = "└── " + translations[4].sv;
-            }
-            if (underTitle.innerHTML === "└── " + translations[5].en || underTitle.innerHTML === "└── " + translations[5].sv){
-                text = "└── " + translations[5].sv;
+                let text = "";
+                if (underTitle.innerHTML === "└── " + translations[3].en || underTitle.innerHTML === "└── " + translations[3].sv){
+                    text = "└── " + translations[3].sv;
+                }
+                if (underTitle.innerHTML === "└── " + translations[4].en || underTitle.innerHTML === "└── " + translations[4].sv){
+                    text = "└── " + translations[4].sv;
+                }
+                if (underTitle.innerHTML === "└── " + translations[5].en || underTitle.innerHTML === "└── " + translations[5].sv){
+                    text = "└── " + translations[5].sv;
+                }            
+                underTitle.innerHTML = "";
+                this.mobMenuHeader(text);
+
+                setDrop.style = "display:none;"
+                this.setOn = 1 - this.setOn;
+            } else {
+                document.getElementById("lang_select").innerHTML = "SV";
+                let translator = new Translator("en");
+                translator.translate();
+
+                let text = "";
+                if (underTitle.innerHTML === "└── " + translations[3].sv || underTitle.innerHTML === "└── " + translations[3].en){
+                    text = "└── " + translations[3].en;
+                }
+                if (underTitle.innerHTML === "└── " + translations[4].sv || underTitle.innerHTML === "└── " + translations[4].en){
+                    text = "└── " + translations[4].en;
+                }
+                if (underTitle.innerHTML === "└── " + translations[5].sv || underTitle.innerHTML === "└── " + translations[5].en){
+                    text = "└── " + translations[5].en;
+                }            
+                underTitle.innerHTML = "";
+                this.mobMenuHeader(text);
+
+                setDrop.style = "display:none;"
+                this.setOn = 1 - this.setOn;
             }            
-            underTitle.innerHTML = "";
-            this.mobMenuHeader(text);
-
-            setDrop.style = "display:none;"
-            this.setOn = 1 - this.setOn;
         })
-        
-        document.getElementById("lang_select_en").addEventListener("click", () =>{
-            //calls "Translator"-class to switch language to english
-            let translator = new Translator("en");
-            translator.translate();
 
-            let text = "";
-            if (underTitle.innerHTML === "└── " + translations[3].sv || underTitle.innerHTML === "└── " + translations[3].en){
-                text = "└── " + translations[3].en;
-            }
-            if (underTitle.innerHTML === "└── " + translations[4].sv || underTitle.innerHTML === "└── " + translations[4].en){
-                text = "└── " + translations[4].en;
-            }
-            if (underTitle.innerHTML === "└── " + translations[5].sv || underTitle.innerHTML === "└── " + translations[5].en){
-                text = "└── " + translations[5].en;
+        document.getElementById("theme_select").addEventListener("click", () =>{
+            if (this.brightTheme === true){
+                document.getElementById("color_theme").setAttribute("href", "css/styles.css");
+                document.getElementById("theme_sel_btn").setAttribute("src", "icons/sun.svg")
+                document.getElementById("theme_sel_btn").setAttribute("alt", "Dark theme")
+                document.getElementById("cogs").setAttribute("src", "icons/cogs_white.svg");
+                document.getElementById("hamb").setAttribute("src", "icons/hamb_white.svg");
+                this.brightTheme = false;
+
+                setDrop.style = "display:none;"
+                this.setOn = 1 - this.setOn;
+            } else {
+                document.getElementById("color_theme").setAttribute("href", "css/styles-light.css");
+                document.getElementById("theme_sel_btn").setAttribute("src", "icons/moon.svg")
+                document.getElementById("theme_sel_btn").setAttribute("alt", "Bright theme")
+                document.getElementById("cogs").setAttribute("src", "icons/cogs_dark.svg");
+                document.getElementById("hamb").setAttribute("src", "icons/hamb_dark.svg");
+                this.brightTheme = true;
+
+                setDrop.style = "display:none;"
+                this.setOn = 1 - this.setOn;
             }            
-            underTitle.innerHTML = "";
-            this.mobMenuHeader(text);
-
-            setDrop.style = "display:none;"
-            this.setOn = 1 - this.setOn;
-        })
-
-        //switch between the two color-schemes by changing stylesheet, also switching svg-files for menu-buttons
-
-        document.getElementById("theme_select_dark").addEventListener("click", () =>{
-            document.getElementById("color_theme").setAttribute("href", "css/styles.css");
-            document.getElementById("cogs").setAttribute("src", "icons/cogs_white.svg");
-            document.getElementById("hamb").setAttribute("src", "icons/hamb_white.svg");
-
-            setDrop.style = "display:none;"
-            this.setOn = 1 - this.setOn;
-        })
-        document.getElementById("theme_select_light").addEventListener("click", () =>{
-            document.getElementById("color_theme").setAttribute("href", "css/styles-light.css");
-            document.getElementById("cogs").setAttribute("src", "icons/cogs_dark.svg");
-            document.getElementById("hamb").setAttribute("src", "icons/hamb_dark.svg");
-
-            setDrop.style = "display:none;"
-            this.setOn = 1 - this.setOn;
         })
     }
 

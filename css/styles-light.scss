@@ -93,7 +93,13 @@ body{
                     position: absolute;
                     z-index: 1;
                     right: 9%;
-                    background-color: $background;
+                    background-color: $background;                    
+
+                    img{
+                        max-height: 1rem;
+                        min-width: 1rem;
+                        padding-top: 0.2rem;
+                    }
 
                     .set_btn{
                         @include set_button();
@@ -106,45 +112,7 @@ body{
                     .set_btn:active{
                         @include btn_active();
                         border:1px solid $text_class;
-                    }
-
-                    .set_btn_dark{
-                        @include set_button();
-                        color: #FFFFFF;
-                        background-color: #1E1E1E;
-                        text-decoration: underline;
-                        border: 1px solid #FFFFFF;
-                    }
-
-                    .set_btn_dark:focus{
-                        @include btn_focus();
-                    }
-
-                    .set_btn_dark:active{
-                        @include btn_active();
-                        border:1px solid $text_class;
-                    }
-
-                    .set_btn_light{
-                        @include set_button();
-                        color: #1E1E1E;
-                        background-color: #FFFFFF;
-                        text-decoration: underline;
-                        border: 1px solid #1E1E1E;
-                    }
-
-                    .set_btn_light:focus{
-                        @include btn_focus();
-                    }
-
-                    .set_btn_light:active{
-                        @include btn_active();
-                        border:1px solid $text_class;
-                    }
-
-                    #space{
-                        height: 1rem;
-                    }
+                    }                                                           
                 }                
             }
         }

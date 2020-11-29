@@ -48,15 +48,12 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .main_wrapper .head_content header .settings #settings_btn img {
   max-height: 1.2rem;
   min-width: 1.2rem;
-}
-
-.main_wrapper .head_content header .settings #settings_btn:focus {
-  outline: none;
 }
 
 .main_wrapper .head_content header .settings .dropdown {
@@ -68,6 +65,12 @@ body {
   background-color: #1E1E1E;
 }
 
+.main_wrapper .head_content header .settings .dropdown img {
+  max-height: 1rem;
+  min-width: 1rem;
+  padding-top: 0.2rem;
+}
+
 .main_wrapper .head_content header .settings .dropdown .set_btn {
   height: 2rem;
   padding-left: auto;
@@ -75,69 +78,14 @@ body {
   color: #FFFFFF;
   background-color: #1E1E1E;
   border: 1px solid #FFFFFF;
+  outline: none;
   margin: 0.4rem;
   cursor: pointer;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn:focus {
-  outline: none;
 }
 
 .main_wrapper .head_content header .settings .dropdown .set_btn:active {
   color: #4EC9B0;
   border: 1px solid #4EC9B0;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_dark {
-  height: 2rem;
-  padding-left: auto;
-  padding-right: auto;
-  color: #FFFFFF;
-  background-color: #1E1E1E;
-  border: 1px solid #FFFFFF;
-  margin: 0.4rem;
-  cursor: pointer;
-  color: #FFFFFF;
-  background-color: #1E1E1E;
-  text-decoration: underline;
-  border: 1px solid #FFFFFF;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_dark:focus {
-  outline: none;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_dark:active {
-  color: #4EC9B0;
-  border: 1px solid #4EC9B0;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_light {
-  height: 2rem;
-  padding-left: auto;
-  padding-right: auto;
-  color: #FFFFFF;
-  background-color: #1E1E1E;
-  border: 1px solid #FFFFFF;
-  margin: 0.4rem;
-  cursor: pointer;
-  color: #1E1E1E;
-  background-color: #FFFFFF;
-  text-decoration: underline;
-  border: 1px solid #1E1E1E;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_light:focus {
-  outline: none;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn_light:active {
-  color: #4EC9B0;
-  border: 1px solid #4EC9B0;
-}
-
-.main_wrapper .head_content header .settings .dropdown #space {
-  height: 1rem;
 }
 
 .main_wrapper #inner_content {
@@ -171,15 +119,12 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn img {
   max-height: 1.2rem;
   min-width: 1.2rem;
-}
-
-.main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn:focus {
-  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown {
@@ -198,12 +143,9 @@ body {
   color: #FFFFFF;
   background-color: #1E1E1E;
   border: 1px solid #FFFFFF;
+  outline: none;
   margin: 0.4rem;
   cursor: pointer;
-}
-
-.main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn:focus {
-  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn:active {
@@ -328,12 +270,9 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
   font-size: 1rem;
   color: #4EC9B0;
-}
-
-.main_wrapper #main_works #slide_control button:focus {
-  outline: none;
 }
 
 .main_wrapper #main_works #slide_control .dots {
@@ -464,6 +403,7 @@ a {
   }
   .main_wrapper #inner_content #menu_div .menu_btn {
     border: none;
+    outline: none;
     display: inline-block;
     text-decoration: none;
     background-color: #1E1E1E;
@@ -475,11 +415,10 @@ a {
     cursor: pointer;
     margin: 0 0 1.2rem 0;
     padding: 0 0 0.03rem 0.2rem;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
   }
-  .main_wrapper #inner_content #menu_div .menu_btn:focus {
-    outline: none;
-  }
-  .main_wrapper #inner_content #menu_div .menu_btn:active {
+  .main_wrapper #inner_content #menu_div .menu_btn:hover {
     color: #4EC9B0;
   }
   .main_wrapper #inner_content #mob_menu {

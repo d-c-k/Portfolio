@@ -10,7 +10,7 @@ class Translator{
         document.documentElement.setAttribute("lang", this.langCode);
 
         let texts = document.getElementsByClassName("lang_opt")
-        console.log(texts);
+        //console.log(texts);
 
         for (let i = 0; i < texts.length; i++){
             if (this.langCode == "sv"){
