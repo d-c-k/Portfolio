@@ -29,6 +29,19 @@ $text_javadocKeyword: #D9E577;
     cursor: pointer;
 }
 
+// @mixin mob_menu_btn{
+//     font-size: 1rem;
+//     text-align: left;
+//     //height: 2.4rem;
+//     color: $text_main;
+//     background-color: $background;
+//     //margin: 1rem 0;
+//     padding: 0;
+//     outline:none;
+//     border: none;
+//     cursor: pointer;
+// }
+
 @mixin remove_default_btn{
     border: none;
     outline: none;
@@ -76,41 +89,55 @@ body{
                 cursor: pointer;
             }
 
-            .settings{
-                //Dropdown menu for settings
-                
-                #settings_btn{
+            .new_mob_menu {
+                display: flex;
+
+                #mob_menu_btn{
                     @include drop_btn();
 
                     img{
                         max-height: 1.2rem;
                         min-width: 1.2rem;
                     }
-                }            
+                } 
+            }
+
+            .settings{
+                //Dropdown menu for settings
+                display: none;
+                
+                // #settings_btn{
+                //     @include drop_btn();
+
+                //     img{
+                //         max-height: 1.2rem;
+                //         min-width: 1.2rem;
+                //     }
+                // }            
                                 
-                .dropdown{
-                    display: none;
-                    margin-top: 0.5rem;
-                    position: absolute;
-                    z-index: 1;
-                    right: 9%;
-                    background-color: $background;                    
+                // .dropdown{
+                //     display: none;
+                //     margin-top: 0.5rem;
+                //     position: absolute;
+                //     z-index: 1;
+                //     right: 9%;
+                //     background-color: $background;                    
 
-                    img{
-                        max-height: 1rem;
-                        min-width: 1rem;
-                        padding-top: 0.2rem;
-                    }
+                //     img{
+                //         max-height: 1rem;
+                //         min-width: 1rem;
+                //         padding-top: 0.2rem;
+                //     }
 
-                    .set_btn{
-                        @include set_button();
-                    }
+                //     .set_btn{
+                //         @include set_button();
+                //     }
 
-                    .set_btn:active{
-                        @include btn_active();
-                        border:1px solid $text_class;
-                    }                                                           
-                }                
+                //     .set_btn:active{
+                //         @include btn_active();
+                //         border:1px solid $text_class;
+                //     }                                                           
+                // }                
             }
         }
     }
@@ -131,30 +158,92 @@ body{
 
             #menu_bar{
                 
-                #mob_menu_btn{
-                    @include drop_btn();
+                // #mob_menu_btn{
+                //     @include drop_btn();
 
-                    img{
-                        max-height: 1.2rem;
-                        min-width: 1.2rem;
-                    }
-                }   
+                //     img{
+                //         max-height: 1.2rem;
+                //         min-width: 1.2rem;
+                //     }
+                // }   
+
                 
+                @keyframes drop {
+                    from{height:0%;}
+                    to{height:100%}
+                }
+
+                @keyframes fade_in {
+                    from{opacity:0;}
+                    50%{opacity:0;}
+                    to{opacity:1;}
+                }
+
+                @-webkit-keyframes drop {
+                    from{height:0%;}
+                    to{height:100%}
+                }
+
+                @-webkit-keyframes fade_in {
+                    from{opacity:0;}
+                    50%{opacity:0;}
+                    to{opacity:1;}
+                }
+
                 .dropdown{
                     display: none;
-                    margin-top: 0.3rem;
                     position: absolute;
                     z-index: 1;
-                    right: 9%;
-                    background-color: $background;
-
+                    width: 100%;
+                    right: 0%;
+                    border-bottom: 0.2rem solid $text_main;
+                    background-color:$background;                    
+                    
                     .mob_btn{
-                        @include set_button()
+                        grid-column: 2/7;                        
+                        font-size: 1rem;
+                        text-align: left;
+                        color: $text_main;
+                        background-color: transparent;
+                        padding: 0;
+                        outline:none;
+                        border: none;
+                        animation-name: fade_in;
+                        animation-duration: 0.5s;
+                        -webkit-animation-name: fade_in;
+                        -webkit-animation-duration: 0.5s;
+                        cursor: pointer;                       
                     }
 
-                    .mob_btn:active{
-                        @include btn_active()
+                    #title_load{
+                        grid-column: 2/7;
+                        grid-row: 1;
+                        color: $text_main;
+                        font-size: 1rem;
                     }
+
+                    #mob_about_btn {
+                        grid-row: 2;
+                    }
+
+                    #mob_works_btn {
+                        grid-row: 4;
+                    }
+
+                    #mob_contact_btn {
+                        grid-row: 6;
+                    }
+                }
+
+                .dropdown_active{
+                    display: grid;
+                    grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr 1fr;
+                    grid-template-rows: 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 1fr ;
+                    height: 100%;
+                    animation-name: drop;
+                    animation-duration: 0.3s;
+                    -webkit-animation-name: drop;
+                    -webkit-animation-duration: 0.3s;
                 }
             }               
         }
@@ -368,6 +457,51 @@ a{
         .head_content{
             grid-column: 2/9; 
             grid-row: 2;
+
+            header {
+
+                .new_mob_menu {                    
+                    display:none;
+                }
+
+                .settings{
+                    //Dropdown menu for settings
+                    display: inline-block;
+                    
+                    #settings_btn{
+                        @include drop_btn();
+    
+                        img{
+                            max-height: 1.2rem;
+                            min-width: 1.2rem;
+                        }
+                    }            
+                                    
+                    .dropdown{
+                        display: none;
+                        margin-top: 0.5rem;
+                        position: absolute;
+                        z-index: 1;
+                        right: 9%;
+                        background-color: $background;                    
+    
+                        img{
+                            max-height: 1rem;
+                            min-width: 1rem;
+                            padding-top: 0.2rem;
+                        }
+    
+                        .set_btn{
+                            @include set_button();
+                        }
+    
+                        .set_btn:active{
+                            @include btn_active();
+                            border:1px solid $text_class;
+                        }                                                           
+                    }                
+                }
+            }
         }
 
         #inner_content{   

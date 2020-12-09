@@ -48,15 +48,12 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .main_wrapper .head_content header .settings #settings_btn img {
   max-height: 1.2rem;
   min-width: 1.2rem;
-}
-
-.main_wrapper .head_content header .settings #settings_btn:focus {
-  outline: none;
 }
 
 .main_wrapper .head_content header .settings .dropdown {
@@ -81,12 +78,9 @@ body {
   color: #1E1E1E;
   background-color: #FFFFFF;
   border: 1px solid #1E1E1E;
+  outline: none;
   margin: 0.4rem;
   cursor: pointer;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn:focus {
-  outline: none;
 }
 
 .main_wrapper .head_content header .settings .dropdown .set_btn:active {
@@ -125,15 +119,12 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn img {
   max-height: 1.2rem;
   min-width: 1.2rem;
-}
-
-.main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn:focus {
-  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown {
@@ -152,12 +143,9 @@ body {
   color: #1E1E1E;
   background-color: #FFFFFF;
   border: 1px solid #1E1E1E;
+  outline: none;
   margin: 0.4rem;
   cursor: pointer;
-}
-
-.main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn:focus {
-  outline: none;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn:active {
@@ -282,12 +270,9 @@ body {
   background: none;
   cursor: pointer;
   border: none;
+  outline: none;
   font-size: 1rem;
   color: #569CD6;
-}
-
-.main_wrapper #main_works #slide_control button:focus {
-  outline: none;
 }
 
 .main_wrapper #main_works #slide_control .dots {
@@ -418,6 +403,7 @@ a {
   }
   .main_wrapper #inner_content #menu_div .menu_btn {
     border: none;
+    outline: none;
     display: inline-block;
     text-decoration: none;
     background-color: #FFFFFF;
@@ -429,11 +415,10 @@ a {
     cursor: pointer;
     margin: 0 0 1.2rem 0;
     padding: 0 0 0.03rem 0.2rem;
+    -webkit-transition-duration: .2s;
+            transition-duration: .2s;
   }
-  .main_wrapper #inner_content #menu_div .menu_btn:focus {
-    outline: none;
-  }
-  .main_wrapper #inner_content #menu_div .menu_btn:active {
+  .main_wrapper #inner_content #menu_div .menu_btn:hover {
     color: #569CD6;
   }
   .main_wrapper #inner_content #mob_menu {

@@ -2,6 +2,7 @@ class Interface{
     constructor(){
         this.setOn = 0;
         this.menuOn = 0;
+        this.menuOpen = false;
         this.slideInit = false;
         this.brightTheme = false;
     }
@@ -15,6 +16,7 @@ class Interface{
             //displays the landing-page and hides other content when you press the title     
             if (window.innerWidth < 1008){
                 this.showElements("main_animation", "block");
+                this.menuOpen && this.toggleMenu(this.menuOpen);
             } else{
                 this.showElements("desktop_animation_container", "flex");
             } 
@@ -49,9 +51,6 @@ class Interface{
             }
 
             this.setOn = 1 - this.setOn;
-
-            document.getElementById("menu_drop").style = "display:none;"
-            this.menuOn = 0;
         });
 
         document.getElementById("lang_select").addEventListener("click", () =>{
@@ -192,15 +191,7 @@ class Interface{
         let menuDrop = document.getElementById("menu_drop");
 
         document.getElementById("mob_menu_btn").addEventListener("click", () =>{
-            if (this.menuOn === 0){
-                menuDrop.style = "display: flex; flex-direction: column; justify-content: space-between;"
-            }
-            else{
-                menuDrop.style = "display:none;"
-            }
-            this.menuOn = 1 - this.menuOn;
-
-            document.getElementById("set_drop").style = "display:none;"        
+            this.toggleMenu(this.menuOpen)
         })
 
         let mobAbout = document.getElementById("mob_about_btn");
@@ -211,8 +202,7 @@ class Interface{
 
             this.showElements("main_about", "block");
 
-            menuDrop.style = "display:none;"
-            this.menuOn = 1 - this.menuOn;
+            this.toggleMenu(this.menuOpen)
         })
 
         let mobWorks = document.getElementById("mob_works_btn");
@@ -228,8 +218,7 @@ class Interface{
                 this.slideInit = true;
             }
 
-            menuDrop.style = "display:none;"
-            this.menuOn = 1 - this.menuOn;
+            this.toggleMenu(this.menuOpen)
         })
 
         let mobContact = document.getElementById("mob_contact_btn");
@@ -240,8 +229,7 @@ class Interface{
 
             this.showElements("main_contact", "block");
 
-            menuDrop.style = "display:none;"
-            this.menuOn = 1 - this.menuOn;
+            this.toggleMenu(this.menuOpen)
         })
     }
 
@@ -302,5 +290,56 @@ class Interface{
         document.getElementById("main_contact").style = "display: none;"
 
         document.getElementById(elementId).style = "display:" + status;
+    }
+
+    toggleMenu(isOpen){
+        let menuDrop = document.getElementById("menu_drop");
+
+        if(isOpen === false){
+            menuDrop.classList.add("dropdown_active");
+            if (this.brightTheme === false){
+                document.getElementById("hamb").setAttribute("src", "icons/close_white.svg");
+            }else{
+                document.getElementById("hamb").setAttribute("src", "icons/close_dark.svg");
+            }
+            this.menuOpen = true;
+            this.blinkingCursor("cursor")
+
+            
+        }else{
+            menuDrop.classList.remove("dropdown_active");
+            if (this.brightTheme === false){
+                document.getElementById("hamb").setAttribute("src", "icons/hamb_white.svg");
+            }else{
+                document.getElementById("hamb").setAttribute("src", "icons/hamb_dark.svg");
+            }
+
+            //this.blinkingCursor("cursor",false)
+
+            this.menuOpen = false;
+            this.blinkingCursor("cursor")
+        }        
+    }
+
+    blinkingCursor(element){
+        let intervalId;
+        let visible = true;
+        let cursor = document.getElementById(element);
+
+        if (this.menuOpen === true){
+            intervalId = setInterval(() => {
+                if (visible){
+                    cursor.style = "opacity:0;";
+                    visible = false;
+                }else{
+                    cursor.style = "opacity:1;";
+                    visible=true;
+                }
+            },300)
+        }else{
+            window.clearInterval(intervalId);
+        }
+        
+        
     }
 }

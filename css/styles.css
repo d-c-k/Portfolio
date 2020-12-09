@@ -43,7 +43,13 @@ body {
   cursor: pointer;
 }
 
-.main_wrapper .head_content header .settings #settings_btn {
+.main_wrapper .head_content header .new_mob_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.main_wrapper .head_content header .new_mob_menu #mob_menu_btn {
   padding: 0;
   background: none;
   cursor: pointer;
@@ -51,41 +57,13 @@ body {
   outline: none;
 }
 
-.main_wrapper .head_content header .settings #settings_btn img {
+.main_wrapper .head_content header .new_mob_menu #mob_menu_btn img {
   max-height: 1.2rem;
   min-width: 1.2rem;
 }
 
-.main_wrapper .head_content header .settings .dropdown {
+.main_wrapper .head_content header .settings {
   display: none;
-  margin-top: 0.5rem;
-  position: absolute;
-  z-index: 1;
-  right: 9%;
-  background-color: #1E1E1E;
-}
-
-.main_wrapper .head_content header .settings .dropdown img {
-  max-height: 1rem;
-  min-width: 1rem;
-  padding-top: 0.2rem;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn {
-  height: 2rem;
-  padding-left: auto;
-  padding-right: auto;
-  color: #FFFFFF;
-  background-color: #1E1E1E;
-  border: 1px solid #FFFFFF;
-  outline: none;
-  margin: 0.4rem;
-  cursor: pointer;
-}
-
-.main_wrapper .head_content header .settings .dropdown .set_btn:active {
-  color: #4EC9B0;
-  border: 1px solid #4EC9B0;
 }
 
 .main_wrapper #inner_content {
@@ -114,42 +92,113 @@ body {
   color: #FFFFFF;
 }
 
-.main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn {
-  padding: 0;
-  background: none;
-  cursor: pointer;
-  border: none;
-  outline: none;
+@keyframes drop {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
 }
 
-.main_wrapper #inner_content #mob_menu #menu_bar #mob_menu_btn img {
-  max-height: 1.2rem;
-  min-width: 1.2rem;
+@keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes drop {
+  from {
+    height: 0%;
+  }
+  to {
+    height: 100%;
+  }
+}
+
+@-webkit-keyframes fade_in {
+  from {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown {
   display: none;
-  margin-top: 0.3rem;
   position: absolute;
   z-index: 1;
-  right: 9%;
+  width: 100%;
+  right: 0%;
+  border-bottom: 0.2rem solid #FFFFFF;
   background-color: #1E1E1E;
 }
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn {
-  height: 2rem;
-  padding-left: auto;
-  padding-right: auto;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  font-size: 1rem;
+  text-align: left;
   color: #FFFFFF;
-  background-color: #1E1E1E;
-  border: 1px solid #FFFFFF;
+  background-color: transparent;
+  padding: 0;
   outline: none;
-  margin: 0.4rem;
+  border: none;
+  animation-name: fade_in;
+  animation-duration: 0.5s;
+  -webkit-animation-name: fade_in;
+  -webkit-animation-duration: 0.5s;
   cursor: pointer;
 }
 
-.main_wrapper #inner_content #mob_menu #menu_bar .dropdown .mob_btn:active {
-  color: #4EC9B0;
+.main_wrapper #inner_content #mob_menu #menu_bar .dropdown #title_load {
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 5;
+  grid-column: 2/7;
+  -ms-grid-row: 1;
+  grid-row: 1;
+  color: #FFFFFF;
+  font-size: 1rem;
+}
+
+.main_wrapper #inner_content #mob_menu #menu_bar .dropdown #mob_about_btn {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.main_wrapper #inner_content #mob_menu #menu_bar .dropdown #mob_works_btn {
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.main_wrapper #inner_content #mob_menu #menu_bar .dropdown #mob_contact_btn {
+  -ms-grid-row: 6;
+  grid-row: 6;
+}
+
+.main_wrapper #inner_content #mob_menu #menu_bar .dropdown_active {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 2fr 2fr 2fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 2fr 2fr 2fr 1fr 1fr 1fr;
+  -ms-grid-rows: 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 1fr;
+      grid-template-rows: 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 1fr;
+  height: 100%;
+  animation-name: drop;
+  animation-duration: 0.3s;
+  -webkit-animation-name: drop;
+  -webkit-animation-duration: 0.3s;
 }
 
 .main_wrapper #menu_div {
@@ -383,6 +432,51 @@ a {
     grid-column: 2/9;
     -ms-grid-row: 2;
     grid-row: 2;
+  }
+  .main_wrapper .head_content header .new_mob_menu {
+    display: none;
+  }
+  .main_wrapper .head_content header .settings {
+    display: inline-block;
+  }
+  .main_wrapper .head_content header .settings #settings_btn {
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    border: none;
+    outline: none;
+  }
+  .main_wrapper .head_content header .settings #settings_btn img {
+    max-height: 1.2rem;
+    min-width: 1.2rem;
+  }
+  .main_wrapper .head_content header .settings .dropdown {
+    display: none;
+    margin-top: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    right: 9%;
+    background-color: #1E1E1E;
+  }
+  .main_wrapper .head_content header .settings .dropdown img {
+    max-height: 1rem;
+    min-width: 1rem;
+    padding-top: 0.2rem;
+  }
+  .main_wrapper .head_content header .settings .dropdown .set_btn {
+    height: 2rem;
+    padding-left: auto;
+    padding-right: auto;
+    color: #FFFFFF;
+    background-color: #1E1E1E;
+    border: 1px solid #FFFFFF;
+    outline: none;
+    margin: 0.4rem;
+    cursor: pointer;
+  }
+  .main_wrapper .head_content header .settings .dropdown .set_btn:active {
+    color: #4EC9B0;
+    border: 1px solid #4EC9B0;
   }
   .main_wrapper #inner_content {
     -ms-grid-column: 2;
