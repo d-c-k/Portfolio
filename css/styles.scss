@@ -158,18 +158,8 @@ body{
 
             #menu_bar{
                 
-                // #mob_menu_btn{
-                //     @include drop_btn();
-
-                //     img{
-                //         max-height: 1.2rem;
-                //         min-width: 1.2rem;
-                //     }
-                // }   
-
-                
                 @keyframes drop {
-                    from{height:0%;}
+                    from{height:2.4rem;}
                     to{height:100%}
                 }
 
@@ -180,7 +170,7 @@ body{
                 }
 
                 @-webkit-keyframes drop {
-                    from{height:0%;}
+                    from{height:2.4rem;}
                     to{height:100%}
                 }
 
@@ -209,9 +199,9 @@ body{
                         outline:none;
                         border: none;
                         animation-name: fade_in;
-                        animation-duration: 0.5s;
+                        animation-duration: 0.7s;
                         -webkit-animation-name: fade_in;
-                        -webkit-animation-duration: 0.5s;
+                        -webkit-animation-duration: 0.7s;
                         cursor: pointer;                       
                     }
 
@@ -241,9 +231,9 @@ body{
                     grid-template-rows: 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 2.4rem 1fr ;
                     height: 100%;
                     animation-name: drop;
-                    animation-duration: 0.3s;
+                    animation-duration: 1s;
                     -webkit-animation-name: drop;
-                    -webkit-animation-duration: 0.3s;
+                    -webkit-animation-duration: 1s;
                 }
             }               
         }

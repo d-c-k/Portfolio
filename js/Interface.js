@@ -1,10 +1,10 @@
 class Interface{
     constructor(){
         this.setOn = 0;
-        this.menuOn = 0;
         this.menuOpen = false;
         this.slideInit = false;
         this.brightTheme = false;
+        this.blink = new BlinkingCursor("element");
     }
 
     createHeader(){
@@ -21,7 +21,8 @@ class Interface{
                 this.showElements("desktop_animation_container", "flex");
             } 
             
-            document.getElementById("under_title").innerHTML = "";
+            document.getElementById("under_title_prefix").innerHTML = "";
+            document.getElementById("under_title_text").innerHTML = "";
         })
     }
 
@@ -181,23 +182,24 @@ class Interface{
     mobMenuHeader(text){
         //printing the sub-header title
         
-        let underTitle = new TextRunner(text, "under_title");
+        let underTitle = new TextRunner(text, "under_title_text");
         underTitle.runner();
     }
 
     createMenuMobile(){
         //functions for the buttons in the "hamburger-menu" on mobile
-        let underTitle = document.getElementById("under_title");
+        let underTitle = document.getElementById("under_title_text");
         let menuDrop = document.getElementById("menu_drop");
 
         document.getElementById("mob_menu_btn").addEventListener("click", () =>{
             this.toggleMenu(this.menuOpen)
+            document.getElementById("under_title_prefix").innerHTML = "└── ";
         })
-
+        // ? "└──" : ""
         let mobAbout = document.getElementById("mob_about_btn");
         mobAbout.addEventListener("click", () =>{
             underTitle.innerHTML = "";
-            let text = "└── " + document.getElementById("mob_about").innerHTML;
+            let text = document.getElementById("mob_about").innerHTML;
             this.mobMenuHeader(text);
 
             this.showElements("main_about", "block");
@@ -208,7 +210,7 @@ class Interface{
         let mobWorks = document.getElementById("mob_works_btn");
         mobWorks.addEventListener("click", () =>{
             underTitle.innerHTML = "";
-            let text = "└── " + document.getElementById("mob_works").innerHTML;
+            let text = document.getElementById("mob_works").innerHTML;
             this.mobMenuHeader(text);
 
             this.showElements("main_works", "block");
@@ -224,7 +226,7 @@ class Interface{
         let mobContact = document.getElementById("mob_contact_btn");
         mobContact.addEventListener("click", () =>{
             underTitle.innerHTML = "";
-            let text = "└── " + document.getElementById("mob_contact").innerHTML;
+            let text = document.getElementById("mob_contact").innerHTML;
             this.mobMenuHeader(text);
 
             this.showElements("main_contact", "block");
@@ -303,7 +305,7 @@ class Interface{
                 document.getElementById("hamb").setAttribute("src", "icons/close_dark.svg");
             }
             this.menuOpen = true;
-            this.blinkingCursor("cursor")
+            this.blink.startBlink();
 
             
         }else{
@@ -314,32 +316,8 @@ class Interface{
                 document.getElementById("hamb").setAttribute("src", "icons/hamb_dark.svg");
             }
 
-            //this.blinkingCursor("cursor",false)
-
             this.menuOpen = false;
-            this.blinkingCursor("cursor")
+            this.blink.stopBlink();
         }        
-    }
-
-    blinkingCursor(element){
-        let intervalId;
-        let visible = true;
-        let cursor = document.getElementById(element);
-
-        if (this.menuOpen === true){
-            intervalId = setInterval(() => {
-                if (visible){
-                    cursor.style = "opacity:0;";
-                    visible = false;
-                }else{
-                    cursor.style = "opacity:1;";
-                    visible=true;
-                }
-            },300)
-        }else{
-            window.clearInterval(intervalId);
-        }
-        
-        
     }
 }
