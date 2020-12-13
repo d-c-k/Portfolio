@@ -60,38 +60,12 @@ class Interface{
                 let translator = new Translator("sv");
                 translator.translate();
 
-                let text = "";
-                if (underTitle.innerHTML === "└── " + translations[3].en || underTitle.innerHTML === "└── " + translations[3].sv){
-                    text = "└── " + translations[3].sv;
-                }
-                if (underTitle.innerHTML === "└── " + translations[4].en || underTitle.innerHTML === "└── " + translations[4].sv){
-                    text = "└── " + translations[4].sv;
-                }
-                if (underTitle.innerHTML === "└── " + translations[5].en || underTitle.innerHTML === "└── " + translations[5].sv){
-                    text = "└── " + translations[5].sv;
-                }            
-                underTitle.innerHTML = "";
-                this.mobMenuHeader(text);
-
                 setDrop.style = "display:none;"
                 this.setOn = 1 - this.setOn;
             } else {
                 document.getElementById("lang_select").innerHTML = "SV";
                 let translator = new Translator("en");
                 translator.translate();
-
-                let text = "";
-                if (underTitle.innerHTML === "└── " + translations[3].sv || underTitle.innerHTML === "└── " + translations[3].en){
-                    text = "└── " + translations[3].en;
-                }
-                if (underTitle.innerHTML === "└── " + translations[4].sv || underTitle.innerHTML === "└── " + translations[4].en){
-                    text = "└── " + translations[4].en;
-                }
-                if (underTitle.innerHTML === "└── " + translations[5].sv || underTitle.innerHTML === "└── " + translations[5].en){
-                    text = "└── " + translations[5].en;
-                }            
-                underTitle.innerHTML = "";
-                this.mobMenuHeader(text);
 
                 setDrop.style = "display:none;"
                 this.setOn = 1 - this.setOn;
@@ -189,13 +163,18 @@ class Interface{
     createMenuMobile(){
         //functions for the buttons in the "hamburger-menu" on mobile
         let underTitle = document.getElementById("under_title_text");
+        let underTitlePrefix = document.getElementById("under_title_prefix");
         let menuDrop = document.getElementById("menu_drop");
 
         document.getElementById("mob_menu_btn").addEventListener("click", () =>{
             this.toggleMenu(this.menuOpen)
-            document.getElementById("under_title_prefix").innerHTML = "└── ";
+            if(underTitlePrefix.innerHTML != "" && underTitle.innerHTML === ""){
+                underTitlePrefix.innerHTML = "";
+            } else {
+                underTitlePrefix.innerHTML = "└── ";
+            }
         })
-        // ? "└──" : ""
+
         let mobAbout = document.getElementById("mob_about_btn");
         mobAbout.addEventListener("click", () =>{
             underTitle.innerHTML = "";
@@ -232,6 +211,34 @@ class Interface{
             this.showElements("main_contact", "block");
 
             this.toggleMenu(this.menuOpen)
+        })
+
+        document.getElementById("lang_select_mob").addEventListener("click", () =>{
+            if (document.documentElement.lang != "sv"){
+                document.getElementById("lang_select_mob").innerHTML = "EN";
+                let translator = new Translator("sv");
+                translator.translate();
+            } else {
+                document.getElementById("lang_select_mob").innerHTML = "SV";
+                let translator = new Translator("en");
+                translator.translate();
+            }            
+        })
+
+        document.getElementById("theme_select_mob").addEventListener("click", () =>{
+            if (this.brightTheme === true){
+                document.getElementById("color_theme").setAttribute("href", "css/styles.css");
+                document.getElementById("theme_sel_btn_mob").setAttribute("src", "icons/sun.svg")
+                document.getElementById("theme_sel_btn_mob").setAttribute("alt", "Dark theme")
+                document.getElementById("hamb").setAttribute("src", "icons/close_white.svg");
+                this.brightTheme = false;
+            } else {
+                document.getElementById("color_theme").setAttribute("href", "css/styles-light.css");
+                document.getElementById("theme_sel_btn_mob").setAttribute("src", "icons/moon.svg")
+                document.getElementById("theme_sel_btn_mob").setAttribute("alt", "Bright theme")
+                document.getElementById("hamb").setAttribute("src", "icons/close_dark.svg");
+                this.brightTheme = true;
+            }            
         })
     }
 
