@@ -214,14 +214,33 @@ class Interface{
         })
 
         document.getElementById("lang_select_mob").addEventListener("click", () =>{
+            let text = "";
             if (document.documentElement.lang != "sv"){
                 document.getElementById("lang_select_mob").innerHTML = "EN";
                 let translator = new Translator("sv");
                 translator.translate();
+
+                if (underTitle.innerHTML === translations[3].en){
+                    text = translations[3].sv;
+                } else if (underTitle.innerHTML === translations[4].en){
+                    text = translations[4].sv;
+                } else if (underTitle.innerHTML === translations[5].en){
+                    text = translations[5].sv;
+                }
+                underTitle.innerHTML = text;            
             } else {
                 document.getElementById("lang_select_mob").innerHTML = "SV";
                 let translator = new Translator("en");
                 translator.translate();
+
+                if (underTitle.innerHTML === translations[3].sv){
+                    text = translations[3].en;
+                } else if (underTitle.innerHTML === translations[4].sv){
+                    text = translations[4].en;
+                } else if (underTitle.innerHTML === translations[5].sv){
+                    text = translations[5].en;
+                }
+                underTitle.innerHTML = text;
             }            
         })
 
