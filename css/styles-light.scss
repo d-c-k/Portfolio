@@ -114,8 +114,8 @@ body{
                 }
 
                 @-webkit-keyframes drop {
-                    from{-webkit-height:2.4rem;}
-                    to{-webkit-height:100%}
+                    from{height:2.4rem;}
+                    to{height:100%}
                 }
 
                 @-webkit-keyframes fade_in {
@@ -360,8 +360,8 @@ a{
 }
 
 @-webkit-keyframes fade {
-    from {opacity: .1}
-    to {opacity: .6}
+    from {-webkit-opacity: .1}
+    to {-webkit-opacity: .6}
 }
 
 @keyframes fade{
