@@ -124,13 +124,13 @@ body {
 
 @-webkit-keyframes fade_in {
   from {
-    -webkit-opacity: 0;
+    opacity: 0;
   }
   50% {
-    -webkit-opacity: 0;
+    opacity: 0;
   }
   to {
-    -webkit-opacity: 1;
+    opacity: 1;
   }
 }
 
@@ -200,9 +200,6 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
   animation-name: fade_in;
   animation-duration: 0.7s;
   -webkit-animation-name: fade_in;
@@ -211,14 +208,14 @@ body {
 
 .main_wrapper #inner_content #mob_menu #menu_bar .dropdown #set_btns_mob .set_btn {
   height: 2.4rem;
-  width: 40%;
+  width: 20%;
   padding-left: auto;
   padding-right: auto;
   color: #1E1E1E;
   background-color: #FFFFFF;
   border: 1px solid #1E1E1E;
   outline: none;
-  margin: 0;
+  margin: 0 1rem 0 0;
   cursor: pointer;
 }
 
@@ -426,10 +423,10 @@ a {
 
 @-webkit-keyframes fade {
   from {
-    -webkit-opacity: .1;
+    opacity: .1;
   }
   to {
-    -webkit-opacity: .6;
+    opacity: .6;
   }
 }
 
