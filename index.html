@@ -6,10 +6,12 @@
     <meta name="description" content="Portfolio page for Daniel Koefoed. Currently studying web development at Nackademin, Stockholm, Sweden">
     
     <!--preloading background image-->
+    <link rel="preload" href="img/react_crud_screen_mob.jpg" as="image" media="(max-width: 1007px)">
     <link rel="preload" href="img/audioplayer_screen_mob.jpg" as="image" media="(max-width: 1007px)">
     <link rel="preload" href="img/quiz_screen_mob.jpg" as="image" media="(max-width: 1007px)">
     <link rel="preload" href="img/old_portfolio_screen_mob.jpg" as="image"media="(max-width: 1007px)">
 
+    <link rel="preload" href="img/react_crud_screen.JPG" as="image" media="(min-width: 1008px)">
     <link rel="preload" href="img/audioplayer_screen.JPG" as="image" media="(min-width: 1008px)">
     <link rel="preload" href="img/quiz_screen.JPG" as="image" media="(min-width: 1008px)">
     <link rel="preload" href="img/old_portfolio_screen.JPG" as="image"media="(min-width: 1008px)">
@@ -116,6 +118,17 @@
 
         <div id="main_works">
 
+            <div class="presentation" id="react_crud">
+                <div class="transparent fade"></div>       
+                    <div class="pres_text">
+                        <p class="lang_opt" id="pres_react_crud">CRUD-app, skoluppgift.<br>Skapa, läs av, uppdatera och ta bort poster i en lista.
+                        Inkluderar även login med JWT-token samt validering av input-formatet i "VAT-Number"-fältet. Byggd i React med styled-components.<br>
+                        Lösenord: javascriptoramverk</p>
+                        <p><a class="lang_opt" href="https://d-c-k.github.io/react-crud/" target="blank" id="link_react_crud">>> Gå till >></a></p>
+                        <p><a href="https://github.com/d-c-k/react-crud" target="blank">>> GitHub-repo >></a></p>
+                    </div>
+            </div>
+
             <div class="presentation" id="audioplayer">
                 <div class="transparent fade"></div>       
                     <div class="pres_text">
@@ -130,7 +143,7 @@
             <div class="presentation" id="quiz">
                 <div class="transparent fade"></div>        
                     <div class="pres_text">
-                        <p class="lang_opt" id="pres_quiz">Quiz-applikation, skoluppgift.<br>Ett quiz med frågor hämtade via API. 
+                        <p class="lang_opt" id="pres_quiz">Quiz-app, skoluppgift.<br>Ett quiz med frågor hämtade via API. 
                             Välj om du vill besvara mellan 5 och 10 frågor, markera svarsalternativet eller alternativen du tror 
                             stämmer och gå vidare till nästa fråga. Om du ångrar ett svar kan du backa så långt du vill innan du 
                             väljer att låsa och gå vidare. På resultatsidan visas din totala poäng, varje fråga skrivs ut i en ruta 
@@ -144,7 +157,7 @@
                 <div class="transparent fade"></div>       
                     <div class="pres_text">
                         <p class="lang_opt" id="pres_old_portfolio">Min förra portfolio.
-                            <br>Ska ersättas så snart som möjligt.</p>
+                            <br>Basic HTML och CSS.</p>
                         <p><a class="lang_opt" href="http://danielkoefoed.se/index.htm" target="_blank" id="link_old_portfolio">>> Gå till >></a></p>
                     </div>
             </div>            
@@ -157,6 +170,7 @@
                     <div class="dot" id="dot0"></div>
                     <div class="dot" id="dot1"></div>
                     <div class="dot" id="dot2"></div>
+                    <div class="dot" id="dot3"></div>
                 </div>
                 <button type="button" class="slide_btn" id="next_btn">&#10095;</button>                
             </div>

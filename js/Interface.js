@@ -262,8 +262,6 @@ class Interface{
     }
 
     slideShow(){
-        //the method controlling the carousel     
-        
         let slideItems = document.getElementsByClassName("presentation")
 
         let prev = document.getElementById("prev_btn");
@@ -309,8 +307,7 @@ class Interface{
     }    
 
     showElements(elementId, status){
-        //method for showing the chosen elements while hiding the others
-        
+                
         document.getElementById("main_animation").style = "display: none;"
         document.getElementById("desktop_animation_container").style = "display:none;"
         document.getElementById("main_about").style = "display: none;"

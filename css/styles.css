@@ -391,6 +391,10 @@ body {
   background-color: #4EC9B0;
 }
 
+.main_wrapper #main_works #react_crud {
+  background-image: url(../img/react_crud_screen_mob.jpg);
+}
+
 .main_wrapper #main_works #audioplayer {
   background-image: url(../img/audioplayer_screen_mob.jpg);
 }
@@ -655,6 +659,9 @@ a {
     width: 10%;
     -ms-flex-item-align: end;
         align-self: flex-end;
+  }
+  .main_wrapper #main_works #react_crud {
+    background-image: url(../img/react_crud_screen.JPG);
   }
   .main_wrapper #main_works #audioplayer {
     background-image: url(../img/audioplayer_screen.JPG);
